@@ -1,2 +1,0 @@
-# cubbles
-project docs
