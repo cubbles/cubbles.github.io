@@ -53,21 +53,18 @@ address {
 }
 .text-header1 {
     text-align: center;
-    margin-left: 45px;
     padding-top: 10px;
     font-size: 30px;
     color: #e5e5e5;
 }
 .text-header2 {
     text-align: center;
-    margin-left: 15px;
     padding-top: 10px;
     font-size: 25px;
     color: #e5e5e5;
 }
 .text-header3 {
     text-align: center;
-    margin-left: -15px;
     padding-top: 20px;
     font-size: 20px;
     color: #e5e5e5;
