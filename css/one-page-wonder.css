@@ -19,6 +19,17 @@ li {
     font-size: 16px;
 }
 
+#sponsors div p {
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#sponsors img {
+    max-height: 60px;
+}
+
 @media (min-width: 768px) {
     address {
         font-size: 21px;
