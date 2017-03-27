@@ -27,6 +27,11 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.3.0-SNAPSHOT/webcomponents-lite/webcomponents-lite.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.3.0-SNAPSHOT/crc-loader/js/main.js"
+            data-crcinit-loadcif="true"></script>
+
 </head>
 
 <body>
@@ -102,6 +107,77 @@
                 href="https://docs.google.com/presentation/d/13RWv2JpOl8-xJGn3qFuWXH6ttAfQB8qn-H3o6EiD_1E"
                 target="_blank">Cubbles101 <i class="fa fa-external-link" aria-hidden="true"></i></a> for
             a short introduction.</p>
+    </div>
+
+    <!-- example -->
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#demo1">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                        Demo: Simple Line Chart
+                    </a>
+                    (uses the <a href="https://cubbles.atlassian.net/wiki/x/j48mAQ" target="_blank">Cubbles Tag API</a>)
+                </h4>
+            </div>
+            <div id="demo1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <line-chart cubx-webpackage-id="com.incowia.lib.chart-library@0.3.0-SNAPSHOT">
+                        <cubx-core-init style="display: none">
+                            <cubx-core-slot-init slot="dataColumns">
+                                [["dataSet1", 50, 100, 40, 20, 70],
+                                ["dataSet2", 10, 75, 50, 50, 90],
+                                ["dataSet3", 50, 40, 15, 120, 80]]
+                            </cubx-core-slot-init>
+                            <cubx-core-slot-init slot="xLabels">
+                                ["2013","2014","2015","2016","2017"]
+                            </cubx-core-slot-init>
+                        </cubx-core-init>
+                    </line-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#demo2">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                        Demo: CKEditor
+                    </a>
+                    (uses the <a href="https://cubbles.atlassian.net/wiki/x/j48mAQ" target="_blank">Cubbles Tag API</a>)
+                </h4>
+            </div>
+            <div id="demo2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <cubx-ckeditor-basic cubx-webpackage-id="ckeditor@1.0.0"></cubx-ckeditor-basic>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#demo3">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                        Demo: German states
+                    </a>
+                     (uses the <a href="https://cubbles.atlassian.net/wiki/x/II8mAQ" target="_blank">Cubbles IFrame API</a>)
+                </h4>
+            </div>
+            <div id="demo3" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <iframe
+                            id="germanStateDemo"
+                            width="100%"
+                            height="740px"
+                            frameBorder="0"
+                            src='https://cubbles.world/sandbox/cubx.core.rte@2.2.2/iframe/index.html?iframe-id=germanStateDemo&webpackage-id=com.incowia.demo.cubx-polymer-elements-demos@0.3.3&artifact-id=german-states&inits={"googleMapsApiKey":"AIzaSyCqhid9d8R7XjuQBgiYP3a_omY92-gPmJc"}'></iframe>
+                </div>
+            </div>
+        </div>
+
     </div>
     <hr class="featurette-divider">
 
@@ -217,7 +293,8 @@
                 <p class="text-info">Atlassian provides us a free license for Jira and Confluence.</p>
             </div>
             <div class="col-xs-4">
-                <p class="text-info">The initial development was co-funded by the German Ministry for Education and Research.</p>
+                <p class="text-info">The initial development was co-funded by the German Ministry for Education and
+                    Research.</p>
             </div>
         </div>
     </div>
