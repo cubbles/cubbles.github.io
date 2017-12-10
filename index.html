@@ -18,6 +18,12 @@
     <link href="css/one-page-wonder.css" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/e1e8f5fe78.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("cifReady", function () {
+            document.getElementById("examples-group").style.visibility = "visible";
+            console.log("making examples visible ...");
+        });
+    </script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -101,85 +107,15 @@
 
 <!-- Page Content -->
 <div class="container">
+    <br/>
     <div class="text-center">
-        <hr class="featurette-divider">
         <p class="featurette-news text-muted">See <a
                 href="https://docs.google.com/presentation/d/13RWv2JpOl8-xJGn3qFuWXH6ttAfQB8qn-H3o6EiD_1E"
                 target="_blank">Cubbles101 <i class="fa fa-external-link" aria-hidden="true"></i></a> for
             a short introduction.</p>
     </div>
+    <br/>
 
-    <!-- example -->
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#demo1">
-                        <span class="glyphicon glyphicon-chevron-down"></span>
-                        Demo: Simple Line Chart
-                    </a>
-                    (uses the <a href="https://cubbles.atlassian.net/wiki/x/j48mAQ" target="_blank">Cubbles Tag API</a>)
-                </h4>
-            </div>
-            <div id="demo1" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <line-chart cubx-webpackage-id="com.incowia.lib.chart-library@0.3.0-SNAPSHOT">
-                        <cubx-core-init style="display: none">
-                            <cubx-core-slot-init slot="dataColumns">
-                                [["dataSet1", 50, 100, 40, 20, 70],
-                                ["dataSet2", 10, 75, 50, 50, 90],
-                                ["dataSet3", 50, 40, 15, 120, 80]]
-                            </cubx-core-slot-init>
-                            <cubx-core-slot-init slot="xLabels">
-                                ["2013","2014","2015","2016","2017"]
-                            </cubx-core-slot-init>
-                        </cubx-core-init>
-                    </line-chart>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#demo2">
-                        <span class="glyphicon glyphicon-chevron-down"></span>
-                        Demo: CKEditor
-                    </a>
-                    (uses the <a href="https://cubbles.atlassian.net/wiki/x/j48mAQ" target="_blank">Cubbles Tag API</a>)
-                </h4>
-            </div>
-            <div id="demo2" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <cubx-ckeditor-basic cubx-webpackage-id="ckeditor@1.0.0"></cubx-ckeditor-basic>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#demo3">
-                        <span class="glyphicon glyphicon-chevron-down"></span>
-                        Demo: German states
-                    </a>
-                     (uses the <a href="https://cubbles.atlassian.net/wiki/x/II8mAQ" target="_blank">Cubbles IFrame API</a>)
-                </h4>
-            </div>
-            <div id="demo3" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <iframe
-                            id="germanStateDemo"
-                            width="100%"
-                            height="740px"
-                            frameBorder="0"
-                            src='https://cubbles.world/sandbox/cubx.core.rte@2.2.2/iframe/index.html?iframe-id=germanStateDemo&webpackage-id=com.incowia.demo.cubx-polymer-elements-demos@0.3.3&artifact-id=german-states&inits={"googleMapsApiKey":"AIzaSyCqhid9d8R7XjuQBgiYP3a_omY92-gPmJc"}'></iframe>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <hr class="featurette-divider">
 
     <!-- First Featurette -->
     <div class="featurette" id="about">
@@ -217,103 +153,185 @@
     <hr class="featurette-divider">
 
     <!-- Third Featurette -->
-    <div class="featurette" id="contact">
-        <img class="featurette-image img-circle img-responsive pull-right" src="images/bubble3.png">
-        <h2 class="featurette-heading">Get in Touch With the Team
-            <span class="text-muted">and Stay Tuned.</span>
+    <div class="featurette" id="examples">
+        <h2 class="featurette-heading">Some Demos
+            <span class="text-muted">just for a first impression.</span>
         </h2>
         <br/>
-        <p class="lead">The core team is based in Germany:</p>
-        <address>incowia GmbH <br>Albert-Einstein-Straße 3<br>98693 Ilmenau<br><a href="http://www.incowia.de"
-                                                                                  target="_blank">
-            www.incowia.de <i class="fa fa-external-link" aria-hidden="true"></i></a><br><br>
-            E-Mail to <a href="mailto:support@cubbles.world?subject=found you via cubbles.github.io">support@cubbles.world</a>
-            and get in touch with the team.
-        </address>
-
-    </div>
-
-    <hr>
-
-    <div class="featurette" id="resources">
-        <p class="lead text-left text-uppercase"><strong>Resources</strong></p>
-        <p class="lead">Conceptual basics are explained within the <span style="white-space: nowrap;"><a
-                href="https://drive.google.com/file/d/0B7UOOjSBvY3VeFFHaWFVZnBsUWM/view?usp=sharing"
-                target="_blank">Cubbles Platform Overview (pdf) <i class="fa fa-external-link"
-                                                                   aria-hidden="true"></i></a></span>
-        </p>
-        <p class="lead">Find the source-code at <span style="white-space: nowrap;"><a href="https://github.com/Cubbles"
-                                                                                      target="_blank">https://github.com/cubbles <i
-                class="fa fa-external-link" aria-hidden="true"></i></a></span></p>
-    </div>
-
-    <hr>
-
-    <div class="featurette" id="license">
-        <p class="lead text-left text-uppercase"><strong>License Information</strong></p>
-        <p class="lead">
-            The Cubbles Platform is available under the <a href="http://www.apache.org/licenses/LICENSE-2.0"
-                                                           target="_blank">Apache License 2.0 <i
-                class="fa fa-external-link" aria-hidden="true">.</i></a></p>
-        <p class="lead">Client-side core-components provided by the Cubbles core-team use the <a
-                href="https://opensource.org/licenses/MIT" target="_blank">MIT License <i class="fa fa-external-link"
-                                                                                          aria-hidden="true"></i></a>.
-        </p>
-        <p class="lead">
-            Other component developers are free to choose a different license.
-        </p>
-    </div>
-    <hr>
-
-    <div class="featurette" id="sponsors">
-        <p class="lead text-left text-uppercase"><strong>Sponsors</strong></p>
-        <div class="row">
-            <br>
-            <div class="col-xs-4">
-                <a href="http://www.incowia.com/" target="_blank"><img
-                        class="featurette-image img-responsive center-block"
-                        src="images/incowia-logo.jpg"></a>
+        <div id="examples-group" class="panel-group" style="visibility: hidden">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#demo1">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            Demo: Simple Line Chart
+                        </a>
+                        (uses the <a href="https://cubbles.atlassian.net/wiki/x/j48mAQ" target="_blank">Cubbles Tag
+                        API</a>)
+                    </h4>
+                </div>
+                <div id="demo1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <line-chart cubx-webpackage-id="com.incowia.lib.chart-library@0.3.0-SNAPSHOT">
+                            <cubx-core-init style="display: none">
+                                <cubx-core-slot-init slot="dataColumns">
+                                    [["dataSet1", 50, 100, 40, 20, 70],
+                                    ["dataSet2", 10, 75, 50, 50, 90],
+                                    ["dataSet3", 50, 40, 15, 120, 80]]
+                                </cubx-core-slot-init>
+                                <cubx-core-slot-init slot="xLabels">
+                                    ["2013","2014","2015","2016","2017"]
+                                </cubx-core-slot-init>
+                            </cubx-core-init>
+                        </line-chart>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-4">
-                <a href="https://www.atlassian.com/" target="_blank"><img
-                        class="featurette-image img-responsive center-block" src="images/atlassian-logo.svg"></a>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#demo2">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            Demo: CKEditor
+                        </a>
+                        (uses the <a href="https://cubbles.atlassian.net/wiki/x/j48mAQ" target="_blank">Cubbles Tag
+                        API</a>)
+                    </h4>
+                </div>
+                <div id="demo2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <cubx-ckeditor-basic cubx-webpackage-id="ckeditor@1.0.0"></cubx-ckeditor-basic>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-4">
-                <a href="https://www.bmbf.de/" target="_blank"><img class="featurette-image img-responsive center-block"
-                                                                    src="images/bmbf-logo.svg"></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-4">
-                <p class="text-info">incowia is the main sponsor of Cubbles. They support continuous development with
-                    time,
-                    money and access to a wide range of proved experience.</p>
-            </div>
-            <div class="col-xs-4">
-                <p class="text-info">Atlassian provides us a free license for Jira and Confluence.</p>
-            </div>
-            <div class="col-xs-4">
-                <p class="text-info">The initial development was co-funded by the German Ministry for Education and
-                    Research.</p>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#demo3">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            Demo: German states
+                        </a>
+                        (uses the <a href="https://cubbles.atlassian.net/wiki/x/II8mAQ" target="_blank">Cubbles IFrame
+                        API</a>)
+                    </h4>
+                </div>
+                <div id="demo3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <iframe
+                                id="germanStateDemo"
+                                width="100%"
+                                height="740px"
+                                frameBorder="0"
+                                src='https://cubbles.world/sandbox/cubx.core.rte@2.2.2/iframe/index.html?iframe-id=germanStateDemo&webpackage-id=com.incowia.demo.cubx-polymer-elements-demos@0.3.3&artifact-id=german-states&inits={"googleMapsApiKey":"AIzaSyCqhid9d8R7XjuQBgiYP3a_omY92-gPmJc"}'></iframe>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Footer -->
-    <footer>
+        <hr class="featurette-divider">
+        <!-- Third Featurette -->
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-right" src="images/bubble3.png">
+            <h2 class="featurette-heading">Get in Touch With the Team
+                <span class="text-muted">and Stay Tuned.</span>
+            </h2>
+            <br/>
+            <p class="lead">The core team is based in Germany:</p>
+            <address>incowia GmbH <br>Albert-Einstein-Straße 3<br>98693 Ilmenau<br><a href="http://www.incowia.de"
+                                                                                      target="_blank">
+                www.incowia.de <i class="fa fa-external-link" aria-hidden="true"></i></a><br><br>
+                E-Mail to <a href="mailto:support@cubbles.world?subject=found you via cubbles.github.io">support@cubbles.world</a>
+                and get in touch with the team.
+            </address>
+
+        </div>
+
         <hr>
-        <p class="text-right">Copyright &copy; <a href="http://www.incowia.de" target="_blank">incowia GmbH <i
-                class="fa fa-external-link" aria-hidden="true"></i></a> 2016</p>
-    </footer>
 
-</div>
+        <div class="featurette" id="resources">
+            <p class="lead text-left text-uppercase"><strong>Resources</strong></p>
+            <p class="lead">Conceptual basics are explained within the <span style="white-space: nowrap;"><a
+                    href="https://drive.google.com/file/d/0B7UOOjSBvY3VeFFHaWFVZnBsUWM/view?usp=sharing"
+                    target="_blank">Cubbles Platform Overview (pdf) <i class="fa fa-external-link"
+                                                                       aria-hidden="true"></i></a></span>
+            </p>
+            <p class="lead">Find the source-code at <span style="white-space: nowrap;"><a
+                    href="https://github.com/Cubbles"
+                    target="_blank">https://github.com/cubbles <i
+                    class="fa fa-external-link" aria-hidden="true"></i></a></span></p>
+        </div>
 
-<!-- /.container -->
+        <hr>
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
+        <div class="featurette" id="license">
+            <p class="lead text-left text-uppercase"><strong>License Information</strong></p>
+            <p class="lead">
+                The Cubbles Platform is available under the <a href="http://www.apache.org/licenses/LICENSE-2.0"
+                                                               target="_blank">Apache License 2.0 <i
+                    class="fa fa-external-link" aria-hidden="true">.</i></a></p>
+            <p class="lead">Client-side core-components provided by the Cubbles core-team use the <a
+                    href="https://opensource.org/licenses/MIT" target="_blank">MIT License <i
+                    class="fa fa-external-link"
+                    aria-hidden="true"></i></a>.
+            </p>
+            <p class="lead">
+                Other component developers are free to choose a different license.
+            </p>
+        </div>
+        <hr>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+        <div class="featurette" id="sponsors">
+            <p class="lead text-left text-uppercase"><strong>Sponsors</strong></p>
+            <div class="row">
+                <br>
+                <div class="col-xs-4">
+                    <a href="http://www.incowia.com/" target="_blank"><img
+                            class="featurette-image img-responsive center-block"
+                            src="images/incowia-logo.jpg"></a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="https://www.atlassian.com/" target="_blank"><img
+                            class="featurette-image img-responsive center-block" src="images/atlassian-logo.svg"></a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="https://www.bmbf.de/" target="_blank"><img
+                            class="featurette-image img-responsive center-block"
+                            src="images/bmbf-logo.svg"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <p class="text-info">incowia is the main sponsor of Cubbles. They support continuous development
+                        with
+                        time,
+                        money and access to a wide range of proved experience.</p>
+                </div>
+                <div class="col-xs-4">
+                    <p class="text-info">Atlassian provides us a free license for Jira and Confluence.</p>
+                </div>
+                <div class="col-xs-4">
+                    <p class="text-info">The initial development was co-funded by the German Ministry for Education and
+                        Research.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <hr>
+            <p class="text-right">Copyright &copy; <a href="http://www.incowia.de" target="_blank">incowia GmbH <i
+                    class="fa fa-external-link" aria-hidden="true"></i></a> 2016</p>
+        </footer>
+
+    </div>
+
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
