@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text analyzer demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            min-width: 1000px;
+        }
+        .container {
+            display: flex;
+        }
+        #main {
+            min-height: calc(100vh - 15vh);
+        }
+        article {
+            padding: 1em;
+            flex: 1;
+        }
+        header, footer {
+            padding: 1em;
+            height: 5vh;
+        }
+        header, footer {
+            background: rgb(66,133, 244);
+            color: rgb(255, 255, 255);
+        }
+        footer {
+            height: 10vh;
+            text-align: center;
+        }
+        footer a {
+            color: rgb(255, 255, 255);
+        }
+        h1, h2, h3, h4, h5 {
+            margin: 0;
+            font-weight: normal;
+        }
+        .text-center{
+            text-align: center;
+        }
+        cubx-core-init {
+            display: none;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center">
+        <h2>Text analyzer demo</h2>
+    </header>
+    <section id="main">
+        <div class="container">
+            <article>
+                <p>This demo page illustrates the usage of several Cubbles on a plain HTML page. Interaction between them is established using connections which are defined through the Cubbles Tag API.</p>
+                <p>Just put some text in the text area below and see Cubbles in action:</p>
+
+                <cubx-textarea cubx-webpackage-id="com.incowia.basic-html-components@1.7">
+                    <cubx-core-connections>
+                        <cubx-core-connection
+                            connection-id="con-textarea-to-word-count"
+                            source="value"
+                            destination="wordCount:text"></cubx-core-connection>
+                    </cubx-core-connections>
+                    <cubx-core-init>
+                        <cubx-core-slot-init slot="value">"Drawing representing the Internet of things (IoT). The Internet of things (IoT) is the network of physical devices, vehicles, home appliances and other items embedded with electronics, software, sensors, actuators, and network connectivity which enables these objects to connect and exchange data.[1][2][3] Each thing is uniquely identifiable through its embedded computing system but is able to inter-operate within the existing Internet infrastructure. Experts estimate that the IoT will consist of about 30 billion objects by 2020.[4] It is also estimated that the global market value of IoT will reach $7.1 trillion by 2020.[5] The IoT allows objects to be sensed or controlled remotely across existing network infrastructure,[6] creating opportunities for more direct integration of the physical world into computer-based systems, and resulting in improved efficiency, accuracy and economic benefit in addition to reduced human intervention.[7][8][9][10] When IoT is augmented with sensors and actuators, the technology becomes an instance of the more general class of cyber-physical systems, which also encompasses technologies such as smart grids, virtual power plants, smart homes, intelligent transportation and smart cities."
+                        </cubx-core-slot-init>
+                    </cubx-core-init>
+                </cubx-textarea>
+
+                <word-count id="wordCount" cubx-webpackage-id="text-analyzer@1.0.0">
+                    <cubx-core-connections>
+                        <cubx-core-connection
+                            connection-id="con-word-count-to-textarea"
+                            source="wordCount"
+                            destination="wordCloud:list"
+                            hook-function="connectionHook.prepareDataForWordCount"></cubx-core-connection>
+                        <cubx-core-connection
+                                connection-id="con-word-count-to-pie-chart"
+                                source="wordCount"
+                                destination="pieChart:dataColumns"
+                                hook-function="connectionHook.prepareDataForWordCount"></cubx-core-connection>
+                    </cubx-core-connections>
+                </word-count>
+
+            </article>
+        </div>
+        <div class="container">
+            <article class="text-center">
+                <wordcloud-default id="wordCloud" cubx-webpackage-id="wordcloud@1.0.0">
+                    <cubx-core-init>
+                        <cubx-core-slot-init slot="useCanvas">false</cubx-core-slot-init>
+                        <cubx-core-slot-init slot="dimensions">{"width":"100%","height":"400px"}</cubx-core-slot-init>
+                    </cubx-core-init>               </wordcloud-default>
+            </article>
+            <article class="text-center">
+                <pie-chart id="pieChart" cubx-webpackage-id="com.incowia.lib.chart-library@0.3.0"></pie-chart>
+            </article>
+        </div>
+    </section>
+    <footer>
+        <a class="" href="https://cubbles.github.io" target="_blank">Cubbles Platform</a>
+        <p>&copy; 2018 incowia GmbH</p>
+    </footer>
+
+    <script>
+      (function(){
+        // define some connections hooks used in above connections
+        window.connectionHook = {
+
+          prepareDataForWordCount: function (value, next) {
+            if (value instanceof Array) {
+              var array = [];
+              value.some(function (current, index) {
+                array.push([current.term, current.count]);
+                return index === 9;
+              });
+              next(array);
+            }
+          }
+        }
+      })();
+    </script>
+
+    <!--Include webcomponents polyfill provided from Cubbles base-->
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.4.0/webcomponents/webcomponents-lite.min.js"></script>
+    <!-- Include CRCLoader (Client-Runtime-Container Loader) from Cubbles base-->
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.4.0/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
+</body>
+</html>
