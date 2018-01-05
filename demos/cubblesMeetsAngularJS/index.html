@@ -9,10 +9,10 @@
     <link href="css/style.css" rel="stylesheet">
 
     <!--Include webcomponents polyfill provided from Cubbles base-->
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@1.8.0/webcomponents/webcomponents-lite.min.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.4.0/webcomponents/webcomponents-lite.min.js"></script>
 
     <!-- Include CRCLoader (Client-Runtime-Container Loader) from Cubbles base-->
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@1.8.0/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.4.0/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
 
     <!-- include 3rd party libs using bower-->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -45,7 +45,7 @@
             <article>
                 <h3>Demo 1</h3>
                 <p class="flow-text">This demo shows how to easily integrate Cubbles into an existing AngularJS Application.
-                    This is based on AngularJS 1.5.5 and Cubbles Runtime Extension 1.8.0
+                    This is based on AngularJS 1.5.5 and Cubbles Runtime Extension 2.4.0
                     (<a href="https://github.com/cubbles/cubx.core.rte/tree/master/webpackages/cubx.core.rte" target="_blank">source on github</a>)
                 </p>
             </article>
@@ -74,7 +74,7 @@
                         This Method sets a new value on the "value" inpunt slot.</p>
                         <!-- Define Client Runtime Container using attribute "cubx-core-crc" -->
                         <div cubx-core-crc>
-                            <co2-footprint cubx-dependency="https://cubbles.world/sandbox/com.incowia.demo.travel-planner@0.2.0-SNAPSHOT/co2-footprint/main"></co2-footprint>
+                            <co2-footprint cubx-webpackage-id="com.incowia.demo.travel-planner@0.3.0"></co2-footprint>
                         </div>
                     </div>
                 </div>
@@ -88,10 +88,10 @@
 &lt;head&gt;
     ...
     &lt;!--Include webcomponents polyfill provided from Cubbles base--&gt;
-    &lt;script src="https://cubbles.world/sandbox/cubx.core.rte@1.8.0/webcomponents/webcomponents-lite.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cubbles.world/sandbox/cubx.core.rte@2.4.0/webcomponents/webcomponents-lite.min.js"&gt;&lt;/script&gt;
 
     &lt;!-- Include CRCLoader (Client-Runtime-Container Loader) from Cubbles base. --&gt;
-    &lt;script src="https://cubbles.world/sandbox/cubx.core.rte@1.8.0/crc-loader/js/main.js"
+    &lt;script src="https://cubbles.world/sandbox/cubx.core.rte@2.4.0/crc-loader/js/main.js"
             data-crcinit-loadcif="true"&gt;&lt;/script&gt;
     ...
 &lt;/head&gt;
@@ -108,7 +108,7 @@
 ...
 &lt;!-- mark div as Client-Runtime Container using attribute "cubx-core-crc" --&gt;
 &lt;div cubx-core-crc&gt;
-    &lt;co2-footprint cubx-dependency="https://cubbles.world/sandbox/com.incowia.demo.travel-planner@0.2.0-SNAPSHOT/co2-footprint/main"&gt;&lt;/co2-footprint&gt;
+    &lt;co2-footprint cubx-webpackage-id="com.incowia.demo.travel-planner@0.3.0"&gt;&lt;/co2-footprint&gt;
 &lt;/div&gt;
 ...
 &lt;/main&gt;

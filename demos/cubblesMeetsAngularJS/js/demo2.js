@@ -20,7 +20,7 @@
   // create controller
   app.controller('mainCtrl', ['$scope', function ($scope) {
     $scope.rangeValue = 50;
-    $scope.cubxRoot = 'https://cubbles.world/sandbox/com.incowia.demo.travel-planner@0.2.0-SNAPSHOT/co2-footprint/main';
+    $scope.cubxRoot = 'com.incowia.demo.travel-planner@0.3.0';
     $scope.slotValues = {
       value: {
         value: $scope.rangeValue
@@ -36,7 +36,7 @@
   var linkCubxComponent = function ($scope, element) {
     // create inner HTML of directive dynamically
     var html = '<div cubx-core-crc>' +
-      '<' + $scope.cubxName + ' cubx-dependency="' + $scope.cubxRoot + '"></' + $scope.cubxName + '>' +
+      '<' + $scope.cubxName + ' cubx-webpackage-id="' + $scope.cubxRoot + '"></' + $scope.cubxName + '>' +
       '</div>';
     element.html(html);
 

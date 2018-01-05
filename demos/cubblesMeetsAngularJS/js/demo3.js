@@ -22,7 +22,7 @@
     $scope.dataA = 50;
     $scope.dataB = 20;
     $scope.dataC = 75;
-    $scope.cubxRoot = 'https://cubbles.world/sandbox/com.incowia.lib.chart-library@0.1.0-SNAPSHOT/pie-chart/main';
+    $scope.cubxRoot = 'com.incowia.lib.chart-library@0.3.0';
     $scope.slotValues = {
       dataColumns: {
         value: [
@@ -46,7 +46,7 @@
   var linkCubxComponent = function ($scope, element) {
     // create inner HTML of directive dynamically
     var html = '<div cubx-core-crc>' +
-      '<' + $scope.cubxName + ' cubx-dependency="' + $scope.cubxRoot + '"></' + $scope.cubxName + '>' +
+      '<' + $scope.cubxName + ' cubx-webpackage-id="' + $scope.cubxRoot + '"></' + $scope.cubxName + '>' +
       '</div>';
     element.html(html);
 
