@@ -220,13 +220,28 @@
                     <h4 class="panel-title">
                         <a data-toggle="collapse" href="#demoCKEditor">
                             <span class="glyphicon glyphicon-chevron-down"></span>
-                            Demo: CKEditor
+                            Demo: CKEditor with output slot connected to textarea
                         </a>
                     </h4>
                 </div>
                 <div id="demoCKEditor" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <cubx-ckeditor-basic cubx-webpackage-id="ckeditor@1.0.0"></cubx-ckeditor-basic>
+                        Just the CKEditor wrapped into a Cubbles component. It has some slots for configuration and content exhange with other Cubbles components.
+                        See the <a href="https://cubbles.world/shared/ckeditor@1.0.0/cubx-ckeditor/docs/index.html" target="_blank">docs</a> and <a href="https://cubbles.world/shared/ckeditor@1.0.0/cubx-ckeditor/demo/index.html" target="_blank">demo</a> pages for details.
+                        <cubx-ckeditor-basic cubx-webpackage-id="ckeditor@1.0.0">
+                            <cubx-core-init style="display:none">
+                                <cubx-core-slot-init slot="data">"Edit this content to see the output changing as you type ..."</cubx-core-slot-init>
+                            </cubx-core-init>
+                            <cubx-core-connections>
+                                <cubx-core-connection source="dataAfterChange" destination="textArea:value" connection-id="ckDataCon"></cubx-core-connection>
+                            </cubx-core-connections>
+                        </cubx-ckeditor-basic>
+                        <cubx-textarea cubx-webpackage-id="com.incowia.basic-html-components@1.8" id="textArea">
+                            <cubx-core-init style="display:none">
+                                <cubx-core-slot-init slot="cols">80</cubx-core-slot-init>
+                                <cubx-core-slot-init slot="rows">3</cubx-core-slot-init>
+                            </cubx-core-init>
+                        </cubx-textarea>
                     </div>
                 </div>
             </div>
