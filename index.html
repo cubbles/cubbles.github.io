@@ -11,6 +11,13 @@
 
     <title>Cubbles</title>
 
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.4.0-SNAPSHOT/webcomponents-lite/webcomponents-lite.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.4.0-SNAPSHOT/crc-loader/js/main.js"
+            data-crcinit-loadcif="true"></script>
+
+    <!-- for codepen demos -->
+    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,7 +28,7 @@
     <script type="text/javascript">
         document.addEventListener("cifReady", function () {
             document.getElementById("examples-group").style.visibility = "visible";
-            console.log("making examples visible ...");
+            console.log("making demos visible ...");
         });
     </script>
 
@@ -33,10 +40,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.3.0-SNAPSHOT/webcomponents-lite/webcomponents-lite.js"></script>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@2.3.0-SNAPSHOT/crc-loader/js/main.js"
-            data-crcinit-loadcif="true"></script>
 
 </head>
 
@@ -61,22 +64,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#about">Components</a>
+                    <a href="#about">Vision</a>
                 </li>
                 <li>
-                    <a href="#services">Services</a>
+                    <a href="#demos">Demos</a>
                 </li>
                 <li>
-                    <a href="#contact">Get in Touch</a>
+                    <a href="#faqs">FAQs</a>
                 </li>
                 <li>
-                    <a href="#resources">Resources</a>
-                </li>
-                <li>
-                    <a href="#license">License</a>
-                </li>
-                <li>
-                    <a href="#sponsors">Sponsors</a>
+                    <a href="#contact">Contact & Resources</a>
                 </li>
                 <li>
                     <a href="https://cubbles.atlassian.net/wiki" target="_blank">Docs <i
@@ -97,16 +94,14 @@
                 <img src="images/cubbles%20-%20Logo%20-%20200x.png"/>
             </div>
             <div class="col-md-12">
-                <p class="text-header3">Build Cubbles components to provide encapsulated functionality.</p>
-                <p class="text-header2">Share Cubbles components to be used within any web application.</p>
-                <p class="text-header1">Use the Cubbles platform to create next generation web applications.</p>
+                <p class="text-header1">Building blocks for websites.</p>
             </div>
         </div>
     </div>
 </header>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container" id="about">
     <br/>
     <div class="text-center">
         <p class="featurette-news text-muted">See <a
@@ -117,222 +112,324 @@
     <br/>
 
 
-    <!-- First Featurette -->
-    <div class="featurette" id="about">
-        <img class="featurette-image img-circle img-responsive pull-right" src="images/bubble1.png">
-        <h2 class="featurette-heading">Enhance Your Webapps
-            <span class="text-muted">With Cubbles Components.</span>
+    <!-- Vision Featurette -->
+    <div class="featurette">
+        <!--<img class="featurette-image img-circle img-responsive pull-right" src="images/bubble1.png">-->
+        <h2 class="featurette-heading">Our Vision.
+            <span class="text-muted">Web API Integration for Everyone.</span>
         </h2>
-        <p class="lead">Decompose the complexity of your use cases. </p>
-        <p class="lead">Identify components and declare their interfaces as well as
-            connections between them. </p>
-        <p class="lead">Develop, test and maintain components within their isolated codebase over a
-            long term with manageable risks. If appropriated components are already available, just use or adapt them
-            for your context.</p>
-        <p class="lead"><b>Finally: Easily integrate Cubbles Components into your webapps.</b></p>
+        <p class="lead">More and more web apis are available for developers. Having their data / functionality available
+            for any web user is a big step - esp. if you don't have the right skills in place. <b>We want to change
+                that.</b></p>
+        <p class="lead vision"><span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<b>For Page Designer and
+            Content
+            Editors</b><br/> API <> UI integration should be as easy as content editing. Zero Deployment approach.</p>
+        <p class="lead vision"><span class="glyphicon glyphicon-repeat"></span>&nbsp;&nbsp;<b>Bring features to your
+            users - not the other way around.</b><br/> Once
+            a component is created, it can be easily reused on any website - across the organisation / the internet.
+        </p>
+        <p class="lead vision"><span class="glyphicon glyphicon-transfer"></span>&nbsp;&nbsp;<b>Software
+            Crowdsourcing</b><br/> Missing an appropriated component? Find a developer (-team) to build a new one!</p>
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" id="mission">
 
-    <!-- Second Featurette -->
-    <div class="featurette" id="services">
-        <img class="featurette-image img-circle img-responsive pull-left" src="images/bubble2.png">
-        <h2 class="featurette-heading">Use Professional Services
-            <span class="text-muted">to Satisfy You and Your Customers.</span>
+    <!-- Mission Featurette -->
+    <div class="featurette">
+        <h2 class="featurette-heading">Our Approach.
+            <span class="text-muted">A Platform to Share Components.</span>
         </h2>
-        <p class="lead"><b>Demos & Training:</b> Want to know all about component based development with Cubbles? Let's
-            arrange demo- and training sessions.</p>
-        <p class="lead"><b>Support for Technical Design and Development:</b> We provide support for the technical design
-            of components. You are looking for components which are ready-to-use? We are glad to
-            develop them for you.</p>
-        <p class="lead"><b>Hosting:</b> We provide server-side stores for your components on a Platform as a Service
-            (PaaS)
-            basis. In addition we offer on-premise installation and support. </p>
+        <p class="lead">
+            The core of Cubbles is a new kind of component. It's designed on top of the <a
+                href="https://www.webcomponents.org/introduction" target="_blank">webcomponents standard(s) <i
+                class="fa fa-external-link" aria-hidden="true">.</i></a> and is interoperable the DOM and any web
+            application framework.
+        </p>
+        <p>
+        <div class="w80percent text-center">
+            <img class="img-responsive" src="images/cubbles_component.png"/>
+            Blackbox view of a Cubbles component.
+        </div>
+        </p>
+        <p>
+            Cubbles provides an ecosystem of tools to develop, share and use such kind of components.
+        </p>
+        <p>
+            With multiple <b>component instances</b> and 1..n <b>connections</b> you can model <b>dataflows</b> of any complexity:
+            <a href="https://cubbles.world/sandbox/cubx-generic-component-viewer@1.3.4/cubx-generic-component-viewer/demo/index.html"
+               target="_blank">Simple Dataflow</a> |
+            <a href="https://cubbles.world/sandbox/cubx-generic-component-viewer@1.3.3/cubx-generic-component-viewer/demo/complexDemo.html"
+               target="_blank">Complex Dataflow</a>
+            </ol>
+        </p>
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" id="demos">
 
-    <!-- Third Featurette -->
-    <div class="featurette" id="examples">
-        <h2 class="featurette-heading">Some Demos
-            <span class="text-muted">just for a first impression.</span>
+    <!-- Demo Featurette -->
+    <div class="featurette">
+        <h2 class="featurette-heading">Component Usage
+            <span class="text-muted">on Example.</span>
         </h2>
+        <p data-height="400" data-theme-id="dark" data-slug-hash="YYxaWe" data-default-tab="html,result"
+           data-user="hrbu" data-embed-version="2" data-pen-title="Cubbles Wordcloud" class="codepen">See the Pen <a
+                href="https://codepen.io/hrbu/pen/YYxaWe">Cubbles Wordcloud</a> by Hd Böhlau (<a
+                href="https://codepen.io/hrbu">@hrbu</a>) on <a href="https://codepen.io">CodePen</a>.</p>
         <br/>
         <div id="examples-group" class="panel-group" style="visibility: hidden">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#demo1">
+                        <a data-toggle="collapse" href="#demoLineChart">
                             <span class="glyphicon glyphicon-chevron-down"></span>
                             Demo: Simple Line Chart
                         </a>
-                        (uses the <a href="https://cubbles.atlassian.net/wiki/x/j48mAQ" target="_blank">Cubbles Tag
-                        API</a>)
                     </h4>
                 </div>
-                <div id="demo1" class="panel-collapse collapse">
+                <div id="demoLineChart" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <line-chart cubx-webpackage-id="com.incowia.lib.chart-library@0.3.0-SNAPSHOT">
-                            <cubx-core-init style="display: none">
-                                <cubx-core-slot-init slot="dataColumns">
-                                    [["dataSet1", 50, 100, 40, 20, 70],
-                                    ["dataSet2", 10, 75, 50, 50, 90],
-                                    ["dataSet3", 50, 40, 15, 120, 80]]
-                                </cubx-core-slot-init>
-                                <cubx-core-slot-init slot="xLabels">
-                                    ["2013","2014","2015","2016","2017"]
-                                </cubx-core-slot-init>
-                            </cubx-core-init>
-                        </line-chart>
+                        <p data-height="450" data-theme-id="dark" data-slug-hash="PEJbEj" data-default-tab="result"
+                           data-user="hrbu" data-embed-version="2" data-pen-title="Cubbles LineChart" class="codepen">
+                            See the Pen <a href="https://codepen.io/hrbu/pen/PEJbEj/">Cubbles LineChart</a> by Hd Böhlau
+                            (<a href="https://codepen.io/hrbu">@hrbu</a>) on <a href="https://codepen.io">CodePen</a>.
+                        </p>
                     </div>
                 </div>
             </div>
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#demo2">
+                        <a data-toggle="collapse" href="#demoGaugeChart">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            Demo: Gauge Chart
+                        </a>
+                    </h4>
+                </div>
+                <div id="demoGaugeChart" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p data-height="450" data-theme-id="dark" data-slug-hash="WdZpNv" data-default-tab="result"
+                           data-user="hrbu" data-embed-version="2" data-pen-title="Cubbles GaugeChart" class="codepen">
+                            See the Pen <a href="https://codepen.io/hrbu/pen/WdZpNv/">Cubbles GaugeChart</a> by Hd
+                            Böhlau (<a href="https://codepen.io/hrbu">@hrbu</a>) on <a
+                                href="https://codepen.io">CodePen</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#demoCKEditor">
                             <span class="glyphicon glyphicon-chevron-down"></span>
                             Demo: CKEditor
                         </a>
-                        (uses the <a href="https://cubbles.atlassian.net/wiki/x/j48mAQ" target="_blank">Cubbles Tag
-                        API</a>)
                     </h4>
                 </div>
-                <div id="demo2" class="panel-collapse collapse">
+                <div id="demoCKEditor" class="panel-collapse collapse">
                     <div class="panel-body">
                         <cubx-ckeditor-basic cubx-webpackage-id="ckeditor@1.0.0"></cubx-ckeditor-basic>
                     </div>
                 </div>
             </div>
-<!--
+        </div>
+    </div>
+
+    <hr class="featurette-divider" id="faqs">
+
+    <!-- FAQ Featurette -->
+    <div class="featurette">
+        <!--<img class="featurette-image img-circle img-responsive pull-right" src="images/bubble1.png">-->
+        <h2 class="featurette-heading">FAQs</h2>
+        <div id="faqs-group" class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#demo3">
+                        <a data-toggle="collapse" href="#faqDependencyMagic">
                             <span class="glyphicon glyphicon-chevron-down"></span>
-                            Demo: German states
+                            The demos above show Cubbles RTE referred to in <code>head</head></code> of the document.
+                            Where are the component related resources?
                         </a>
-                        (uses the <a href="https://cubbles.atlassian.net/wiki/x/II8mAQ" target="_blank">Cubbles IFrame
-                        API</a>)
                     </h4>
                 </div>
-                <div id="demo3" class="panel-collapse collapse">
+                <div id="faqDependencyMagic" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <iframe
-                                id="germanStateDemo"
-                                width="100%"
-                                height="740px"
-                                frameBorder="0"
-                                src='https://cubbles.world/sandbox/cubx.core.rte@2.2.2/iframe/index.html?iframe-id=germanStateDemo&webpackage-id=com.incowia.demo.cubx-polymer-elements-demos@0.3.3&artifact-id=german-states&inits={"googleMapsApiKey":"AIzaSyCqhid9d8R7XjuQBgiYP3a_omY92-gPmJc"}'></iframe>
+                        <p>
+                            That's part of the magic behind ;-). Basically it works that way:
+                        </p>
+                        <ol>
+                            <li>
+                                The RTE is loaded itself is loaded from a <i>store</i> in the <i>Cubbles Base</i>.
+                            </li>
+                            <li>
+                                Once the RTE is loaded it scans the document for (custom) elements with a <code>cubx-webpackage-id</code>
+                                attribute. The attribute's value is the id of the package, the element's name is the
+                                name of the component within the package.
+                            </li>
+                            <li>
+                                With <code>{package-id}/{component-name}</code> the RTE knows which resources have to be
+                                loaded.
+                            </li>
+                            <li>
+                                If all resources are downloaded, the RTE initializes the elements and they are ready to
+                                use.
+                            </li>
+                        </ol>
+                        <p>
+                            This is why you don't have deploy anything within the backend of your web application in
+                            case you want to use a new component.
+                            The <i>Cubbles Base</i> hosts all the resources and delivers directly to the client.
+                        </p>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#faqComplexScenarios">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            Can I use Cubbles to build complex component interaction scenarios?
+                        </a>
+                    </h4>
+                </div>
+                <div id="faqComplexScenarios" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                            Definitely Yes. You can even build complex webapps using Cubbles components.
+                            <i>PowerCockpit</i> is living example for that.
+                            To see all the components with the dataflows defined on mainpage, follow the instructions:
+                        </p>
+                        <ol>
+                            <li>Open with Chrome: <a href="https://musterstadtwerke.powercockpit.de" target="_blank">https://musterstadtwerke.powercockpit.de</a>
+                            </li>
+                            <li>Install the <a
+                                    href="https://chrome.google.com/webstore/detail/cubbles-webinspector/akfjllhjfdmmemabkfcejldemhimifhe"
+                                    target="_blank">Cubbles WebInspector</a> (a Chrome Extension)
+                            </li>
+                            <li>
+                                Open den Chrome DevTools (F12) and select the 'Cubbles' menu item (on the right >>).
+                            </li>
+                        </ol>
+                        <p>
+                            This (real) application has been build be the Cubbles Core Team and it shows what's
+                            basically possible.
+                            Nevertheless with Cubbles we focus on scenarios where an <i>existing</i> applications can be
+                            enhanced by integration with
+                            one or more web APIs.
+                        </p>
                     </div>
                 </div>
             </div>
-            -->
         </div>
-        <hr class="featurette-divider">
-        <!-- Third Featurette -->
-        <div class="featurette" id="contact">
-            <img class="featurette-image img-circle img-responsive pull-right" src="images/bubble3.png">
-            <h2 class="featurette-heading">Get in Touch With the Team
-                <span class="text-muted">and Stay Tuned.</span>
-            </h2>
-            <br/>
-            <p class="lead">The core team is based in Germany:</p>
-            <address>incowia GmbH <br>Albert-Einstein-Straße 3<br>98693 Ilmenau<br><a href="http://www.incowia.de"
-                                                                                      target="_blank">
-                www.incowia.de <i class="fa fa-external-link" aria-hidden="true"></i></a><br><br>
-                E-Mail to <a href="mailto:support@cubbles.world?subject=found you via cubbles.github.io">support@cubbles.world</a>
-                and get in touch with the team.
-            </address>
-
-        </div>
-
-        <hr>
-
-        <div class="featurette" id="resources">
-            <p class="lead text-left text-uppercase"><strong>Resources</strong></p>
-            <p class="lead">Conceptual basics are explained within the <span style="white-space: nowrap;"><a
-                    href="https://drive.google.com/file/d/0B7UOOjSBvY3VeFFHaWFVZnBsUWM/view?usp=sharing"
-                    target="_blank">Cubbles Platform Overview (pdf) <i class="fa fa-external-link"
-                                                                       aria-hidden="true"></i></a></span>
-            </p>
-            <p class="lead">Find the source-code at <span style="white-space: nowrap;"><a
-                    href="https://github.com/Cubbles"
-                    target="_blank">https://github.com/cubbles <i
-                    class="fa fa-external-link" aria-hidden="true"></i></a></span></p>
-        </div>
-
-        <hr>
-
-        <div class="featurette" id="license">
-            <p class="lead text-left text-uppercase"><strong>License Information</strong></p>
-            <p class="lead">
-                The Cubbles Platform is available under the <a href="http://www.apache.org/licenses/LICENSE-2.0"
-                                                               target="_blank">Apache License 2.0 <i
-                    class="fa fa-external-link" aria-hidden="true">.</i></a></p>
-            <p class="lead">Client-side core-components provided by the Cubbles core-team use the <a
-                    href="https://opensource.org/licenses/MIT" target="_blank">MIT License <i
-                    class="fa fa-external-link"
-                    aria-hidden="true"></i></a>.
-            </p>
-            <p class="lead">
-                Other component developers are free to choose a different license.
-            </p>
-        </div>
-        <hr>
-
-        <div class="featurette" id="sponsors">
-            <p class="lead text-left text-uppercase"><strong>Sponsors</strong></p>
-            <div class="row">
-                <br>
-                <div class="col-xs-4">
-                    <a href="http://www.incowia.com/" target="_blank"><img
-                            class="featurette-image img-responsive center-block"
-                            src="images/incowia-logo.jpg"></a>
-                </div>
-                <div class="col-xs-4">
-                    <a href="https://www.atlassian.com/" target="_blank"><img
-                            class="featurette-image img-responsive center-block" src="images/atlassian-logo.svg"></a>
-                </div>
-                <div class="col-xs-4">
-                    <a href="https://www.bmbf.de/" target="_blank"><img
-                            class="featurette-image img-responsive center-block"
-                            src="images/bmbf-logo.svg"></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <p class="text-info">incowia is the main sponsor of Cubbles. They support continuous development
-                        with
-                        time,
-                        money and access to a wide range of proved experience.</p>
-                </div>
-                <div class="col-xs-4">
-                    <p class="text-info">Atlassian provides us a free license for Jira and Confluence.</p>
-                </div>
-                <div class="col-xs-4">
-                    <p class="text-info">The initial development was co-funded by the German Ministry for Education and
-                        Research.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Footer -->
-        <footer>
-            <hr>
-            <p class="text-right">Copyright &copy; <a href="http://www.incowia.de" target="_blank">incowia GmbH <i
-                    class="fa fa-external-link" aria-hidden="true"></i></a> 2016</p>
-        </footer>
-
     </div>
 
-    <!-- /.container -->
+    <hr class="featurette-divider" id="contact">
+    <!-- Contact Featurette -->
+    <div class="featurette">
+        <!--<img class="featurette-image img-circle img-responsive pull-right" src="images/bubble3.png">-->
+        <h2 class="featurette-heading">Contact
+            <span class="text-muted">& Resources</span>
+        </h2>
+        <br/>
+        <p class="lead text-left text-uppercase"><strong>Contact</strong></p>
+        <p class="lead">
+            <span class="glyphicon glyphicon-user"></span> Team: <a href="https://github.com/orgs/cubbles/people"
+                                                                    target="_blank">on GitHub</a> |
+            <span class="glyphicon glyphicon-envelope"></span> E-Mail to <a
+                href="mailto:support@cubbles.world?subject=found you via cubbles.github.io">support@cubbles.world</a>
+            and get in touch.
+        </p>
+        <!--<p class="lead">The core team is based in Germany:</p>-->
+        <!--<address>incowia GmbH <br>Albert-Einstein-Straße 3<br>98693 Ilmenau<br><a href="http://www.incowia.de"-->
+        <!--target="_blank">-->
+        <!--www.incowia.de <i class="fa fa-external-link" aria-hidden="true"></i></a><br><br>-->
+        <!--E-Mail to <a-->
+        <!--href="mailto:support@cubbles.world?subject=found you via cubbles.github.io">support@cubbles.world</a>-->
+        <!--and get in touch with the team.-->
+        <!--</address>-->
+    </div>
+    <hr id="resources">
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <div class="featurette">
+        <p class="lead text-left text-uppercase"><strong>Resources</strong></p>
+        <p class="lead">Conceptual basics are explained within the <span style="white-space: nowrap;"><a
+                href="https://drive.google.com/file/d/0B7UOOjSBvY3VeFFHaWFVZnBsUWM/view?usp=sharing"
+                target="_blank">Cubbles Platform Overview (pdf) <i class="fa fa-external-link"
+                                                                   aria-hidden="true"></i></a></span>
+        </p>
+        <p class="lead">Source code at <span style="white-space: nowrap;"><a
+                href="https://github.com/Cubbles"
+                target="_blank">https://github.com/cubbles <i
+                class="fa fa-external-link" aria-hidden="true"></i></a></span></p>
+    </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <hr id="license">
+
+    <div class="featurette">
+        <p class="lead text-left text-uppercase"><strong>License Information</strong></p>
+        <p class="lead">
+            The Cubbles Platform is licenced under <a href="http://www.apache.org/licenses/LICENSE-2.0"
+                                                      target="_blank">Apache 2.0 <i
+                class="fa fa-external-link" aria-hidden="true">.</i></a></p>
+        <p class="lead">Client-side core-components provided by the Cubbles core-team use the <a
+                href="https://opensource.org/licenses/MIT" target="_blank">MIT License <i
+                class="fa fa-external-link"
+                aria-hidden="true"></i></a>.
+        </p>
+        <p class="lead">
+            Other component developers are free to choose a different license.
+        </p>
+    </div>
+
+    <hr id="sponsors">
+
+    <div class="featurette">
+        <p class="lead text-left text-uppercase"><strong>Sponsors</strong></p>
+        <div class="row">
+            <br>
+            <div class="col-xs-4">
+                <a href="http://www.incowia.com/" target="_blank"><img
+                        class="featurette-image img-responsive center-block"
+                        src="images/incowia-logo.jpg"></a>
+            </div>
+            <div class="col-xs-4">
+                <a href="https://www.atlassian.com/" target="_blank"><img
+                        class="featurette-image img-responsive center-block" src="images/atlassian-logo.svg"></a>
+            </div>
+            <div class="col-xs-4">
+                <a href="https://www.bmbf.de/" target="_blank"><img
+                        class="featurette-image img-responsive center-block"
+                        src="images/bmbf-logo.svg"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <p class="text-info">incowia is the main sponsor of Cubbles. They support continuous development
+                    with
+                    time,
+                    money and access to a wide range of proved experience.</p>
+            </div>
+            <div class="col-xs-4">
+                <p class="text-info">Atlassian provides us a free license for Jira and Confluence.</p>
+            </div>
+            <div class="col-xs-4">
+                <p class="text-info">The initial development was co-funded by the German Ministry for Education and
+                    Research.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <p class="text-right">Copyright &copy; <a href="http://www.incowia.de" target="_blank">incowia GmbH <i
+                class="fa fa-external-link" aria-hidden="true"></i></a> 2018</p>
+    </footer>
+
+</div>
+
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 

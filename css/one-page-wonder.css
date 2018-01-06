@@ -16,7 +16,7 @@ address {
 }
 
 li {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 #sponsors div p {
@@ -32,6 +32,9 @@ li {
 
 @media (min-width: 768px) {
     address {
+        font-size: 21px;
+    }
+    p {
         font-size: 21px;
     }
 }
@@ -54,7 +57,7 @@ li {
 .headline h1 {
     font-size: 110px;
     background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .headline h2 {
@@ -67,24 +70,28 @@ li {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 .text-header1 {
     text-align: center;
     padding-top: 10px;
     font-size: 30px;
     color: #e5e5e5;
 }
+
 .text-header2 {
     text-align: center;
     padding-top: 10px;
     font-size: 25px;
     color: #e5e5e5;
 }
+
 .text-header3 {
     text-align: center;
     padding-top: 20px;
     font-size: 20px;
     color: #e5e5e5;
 }
+
 .featurette-divider {
     margin: 80px 0;
 }
@@ -113,7 +120,7 @@ footer {
     margin: 50px 0;
 }
 
-@media(max-width:1200px) {
+@media (max-width: 1200px) {
     .headline h1 {
         font-size: 140px;
     }
@@ -127,11 +134,17 @@ footer {
     }
 
     .featurette-image.pull-left {
+        margin-top: 30px;
         margin-right: 20px;
+        width: 200px;
+        height: 200px;
     }
 
     .featurette-image.pull-right {
+        margin-top: 30px;
         margin-left: 20px;
+        width: 350px;
+        height: 350px;
     }
 
     .featurette-heading {
@@ -139,7 +152,7 @@ footer {
     }
 }
 
-@media(max-width:991px) {
+@media (max-width: 991px) {
     .headline h1 {
         font-size: 105px;
     }
@@ -153,7 +166,7 @@ footer {
     }
 
     .featurette-image {
-        max-width: 50%;
+        max-width: 30%;
     }
 
     .featurette-image.pull-left {
@@ -169,7 +182,7 @@ footer {
     }
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     .container {
         margin: 0 15px;
     }
@@ -183,7 +196,7 @@ footer {
     }
 }
 
-@media(max-width:668px) {
+@media (max-width: 668px) {
     .headline h1 {
         font-size: 70px;
     }
@@ -197,7 +210,7 @@ footer {
     }
 }
 
-@media(max-width:640px) {
+@media (max-width: 640px) {
     .headline {
         padding: 75px 0 25px 0;
     }
@@ -211,7 +224,7 @@ footer {
     }
 }
 
-@media(max-width:375px) {
+@media (max-width: 375px) {
     .featurette-divider {
         margin: 10px 0;
     }
@@ -235,54 +248,95 @@ footer {
     background-color: #4285F4;
     border-color: #080808;
 }
+
 .navbar-inverse .navbar-brand {
     color: #ffffff;
 }
+
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
     color: #fff;
     background-color: transparent;
 }
+
 .navbar-inverse .navbar-text {
     color: #ffffff;
 }
+
 .navbar-inverse .navbar-nav > li > a {
     color: #ffffff;
 }
+
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
     color: #fff;
     background-color: transparent;
 }
+
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
     color: #fff;
     background-color: #080808;
 }
+
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
 .navbar-inverse .navbar-nav > .disabled > a:focus {
     color: #444;
     background-color: transparent;
 }
+
 .navbar-inverse .navbar-toggle {
     border-color: #333;
 }
+
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
     background-color: #333;
 }
+
 .navbar-inverse .navbar-toggle .icon-bar {
     background-color: #fff;
 }
+
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
     border-color: #101010;
 }
+
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
     color: #fff;
     background-color: #080808;
 }
+
+ul.icon
+{
+    list-style-type: none;
+    padding-left: 40px;
+    list-style-position: outside;
+}
+
+p.vision
+{
+    padding-left: 2em;
+    text-indent: -0.8em;
+}
+ul.icon li
+{
+    text-indent: -2em;
+}
+
+div.w80percent
+{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*ul.icon li:before*/
+/*{*/
+    /*width: 1.4em;*/
+/*}*/
