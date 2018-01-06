@@ -338,6 +338,10 @@ div.w80percent {
     margin-right: auto;
 }
 
+code {
+    color: #333;
+    background-color: rgba(255,255,255,.15);
+}
 .panel-title {
     font-size: 19px;
 }
