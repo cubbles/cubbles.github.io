@@ -16,7 +16,7 @@ address {
 }
 
 li {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #sponsors div p {
@@ -32,10 +32,15 @@ li {
 
 @media (min-width: 768px) {
     address {
-        font-size: 21px;
+        font-size: 19px;
     }
+
     p {
-        font-size: 21px;
+        font-size: 19px;
+    }
+
+    .lead {
+        font-size: 19px;
     }
 }
 
@@ -312,31 +317,27 @@ footer {
     background-color: #080808;
 }
 
-ul.icon
-{
+ul.icon {
     list-style-type: none;
     padding-left: 40px;
     list-style-position: outside;
 }
 
-p.vision
-{
+p.vision {
     padding-left: 2em;
     text-indent: -0.8em;
 }
-ul.icon li
-{
+
+ul.icon li {
     text-indent: -2em;
 }
 
-div.w80percent
-{
+div.w80percent {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
 }
 
-/*ul.icon li:before*/
-/*{*/
-    /*width: 1.4em;*/
-/*}*/
+.panel-title {
+    font-size: 19px;
+}
