@@ -142,16 +142,21 @@
             Blackbox view of a Cubbles component.
         </div>
         </p>
+        <br/>
         <p>
-            Cubbles provides an ecosystem of tools to develop, share and use such kind of components.
+            With multiple <b>component instances</b> and <b>1..n connections</b> you can model <b>dataflows</b> of any
+            complexity:<br/>
+        <div class="text-center">
+        <a href="https://cubbles.world/sandbox/cubx-generic-component-viewer@1.3.3/cubx-generic-component-viewer/demo/index.html"
+           target="_blank">
+            <img class="img-responsive" src="images/cubbles_dataflow_simple.png"/></a>
+            A simple dataflow. See also <a href="https://cubbles.world/sandbox/cubx-generic-component-viewer@1.3.3/cubx-generic-component-viewer/demo/complexDemo.html"
+                                           target="_blank">more complex dataflow.</a>
+        </div>
         </p>
-        <p>
-            With multiple <b>component instances</b> and 1..n <b>connections</b> you can model <b>dataflows</b> of any complexity:
-            <a href="https://cubbles.world/sandbox/cubx-generic-component-viewer@1.3.4/cubx-generic-component-viewer/demo/index.html"
-               target="_blank">Simple Dataflow</a> |
-            <a href="https://cubbles.world/sandbox/cubx-generic-component-viewer@1.3.3/cubx-generic-component-viewer/demo/complexDemo.html"
-               target="_blank">Complex Dataflow</a>
-            </ol>
+        <br/>
+        <p class="lead">
+            Cubbles provides an ecosystem of tools to develop, share and use such kind of components.
         </p>
     </div>
 
@@ -217,14 +222,21 @@
                 </div>
                 <div id="demoCKEditor" class="panel-collapse collapse">
                     <div class="panel-body">
-                        Just the CKEditor wrapped into a Cubbles component. It has some slots for configuration and content exhange with other Cubbles components.
-                        See the <a href="https://cubbles.world/shared/ckeditor@1.0.0/cubx-ckeditor/docs/index.html" target="_blank">docs</a> and <a href="https://cubbles.world/shared/ckeditor@1.0.0/cubx-ckeditor/demo/index.html" target="_blank">demo</a> pages for details.
+                        Just the CKEditor wrapped into a Cubbles component. It has some slots for configuration and
+                        content exhange with other Cubbles components.
+                        See the <a href="https://cubbles.world/shared/ckeditor@1.0.0/cubx-ckeditor/docs/index.html"
+                                   target="_blank">docs</a> and <a
+                            href="https://cubbles.world/shared/ckeditor@1.0.0/cubx-ckeditor/demo/index.html"
+                            target="_blank">demo</a> pages for details.
                         <cubx-ckeditor-basic cubx-webpackage-id="ckeditor@1.0.0">
                             <cubx-core-init style="display:none">
-                                <cubx-core-slot-init slot="data">"Edit this content to see the output changing as you type ..."</cubx-core-slot-init>
+                                <cubx-core-slot-init slot="data">"Edit this content to see the output changing as you
+                                    type ..."
+                                </cubx-core-slot-init>
                             </cubx-core-init>
                             <cubx-core-connections>
-                                <cubx-core-connection source="dataAfterChange" destination="textArea:value" connection-id="ckDataCon"></cubx-core-connection>
+                                <cubx-core-connection source="dataAfterChange" destination="textArea:value"
+                                                      connection-id="ckDataCon"></cubx-core-connection>
                             </cubx-core-connections>
                         </cubx-ckeditor-basic>
                         <cubx-textarea cubx-webpackage-id="com.incowia.basic-html-components@1.8" id="textArea">
@@ -251,7 +263,8 @@
                     <h4 class="panel-title">
                         <a data-toggle="collapse" href="#faqDependencyMagic">
                             <span class="glyphicon glyphicon-chevron-down"></span>
-                            The demos above shows (only) the Cubbles RTE referred from the <code>head</head></code> of the document.
+                            The demos above shows (only) the Cubbles RTE referred from the <code>head</head></code> of
+                            the document.
                             Where can I find the component related resources?
                         </a>
                     </h4>
@@ -290,7 +303,7 @@
                     <h4 class="panel-title">
                         <a data-toggle="collapse" href="#faqComplexScenarios">
                             <span class="glyphicon glyphicon-chevron-down"></span>
-                            Can I use Cubbles to build complex component interaction scenarios?
+                            Can I use Cubbles to build complex interaction scenarios?
                         </a>
                     </h4>
                 </div>
@@ -299,7 +312,8 @@
                         <p>
                             Definitely Yes. You can even build complex webapps using Cubbles components.
                             <i>PowerCockpit</i> is a real world example for that.
-                            To see all the components with the dataflows defined on tje mainpage, follow the instructions:
+                            To see all the components with the dataflows defined on tje mainpage, follow the
+                            instructions:
                         </p>
                         <ol>
                             <li>Open with Chrome: <a href="https://musterstadtwerke.powercockpit.de" target="_blank">https://musterstadtwerke.powercockpit.de</a>
@@ -315,8 +329,72 @@
                         <p>
                             This (real) application has been build by the Cubbles Core Team and shows what's
                             basically possible.
-                            Nevertheless with Cubbles we focus on scenarios where <i>existing</i> applications or just the content can be
+                            Nevertheless with Cubbles we focus on scenarios where <i>existing</i> applications or just
+                            the content can be
                             enhanced by integration with one or more web APIs.
+                        </p>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#faqBackend">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            Does Cubbles have a server side part?
+                        </a>
+                    </h4>
+                </div>
+                <div id="faqBackend" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                            Yes, it has. We call it the "Cubbles Base". The Base manages all available components and
+                            delivers requested resources to web clients.
+                            Currently the Backend is really low level - implementing only the minimal feature set
+                            required to prove the core concepts on client side do work.
+                            See our <a href="https://cubbles.atlassian.net/wiki/spaces/BASE/overview" target="_blank">wiki</a>
+                            for more information.
+                        </p>
+                        <p>
+                            Currently the Base knows the concept of different stores - each store is public, but an
+                            admin is able to grant upload permissions per store and developer.
+                            Any client has read access on any component of any store. To find available components
+                            within a store the <a
+                                href="https://cubbles.world/shared/cubx.core.artifactsearch@1.6.1/artifactsearch/index.html"
+                                target="_blank">artifactsearch</a> is available.
+                        </p>
+                        <hr/>
+                        <p>
+                            For the future the following features are planned:
+                        </p>
+                        <ol>
+                            <li>
+                                <b>Extended Search</b>: A index based search will be provided to find components,
+                                developers etc.
+                                We will provide a search API as well as a client side application (based on reusable
+                                Cubbles components - of course).
+                            </li>
+                            <li>
+                                <b>SignUp and Login via GitHub</b>: You can use your <a href="https://github.com/"
+                                                                                        target="_blank">GitHub</a>
+                                account to for authentication.
+                            </li>
+                            <li>
+                                <b>Store per developer</b>: Each developer will get its own store by default.
+                            </li>
+                            <li>
+                                <b>Team stores</b>: As a registered developer you will be able to create team stores.
+                            </li>
+                            <li>
+                                <b>Upload permissions</b>: Component owners will be able to manage upload permissions on
+                                component level, to manage contributors for it.
+                            </li>
+                        </ol>
+                        <hr/>
+                        <p>
+                            The main technologies we currently use within the backend are
+                            <a href="https://nginx.org/en/" target="_blank">nginx</a>,
+                            <a href="http://couchdb.apache.org/" target="_blank">CouchDB</a>,
+                            <a href="https://nodejs.org/en/" target="_blank">NodeJS</a> and
+                            <a href="https://www.docker.com/" target="_blank">Docker</a>.
                         </p>
                     </div>
                 </div>
