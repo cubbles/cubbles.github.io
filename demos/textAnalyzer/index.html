@@ -61,9 +61,9 @@
         <div class="container">
             <article>
                 <p>This demo page illustrates the usage of several Cubbles on a plain HTML page. Interaction between them is established using connections which are defined through the Cubbles Tag API.</p>
-                <p>Just put some text in the text area below and see Cubbles in action:</p>
+                <p>Just put some text in the text area below and see Cubbles in action (Note: The changes take effect if textarea looses focus):</p>
 
-                <cubx-textarea cubx-webpackage-id="com.incowia.basic-html-components@1.7">
+                <cubx-textarea id="textArea" cubx-webpackage-id="com.incowia.basic-html-components@1.7">
                     <cubx-core-connections>
                         <cubx-core-connection
                             connection-id="con-textarea-to-word-count"
@@ -76,6 +76,7 @@
                     </cubx-core-init>
                 </cubx-textarea>
 
+
                 <word-count id="wordCount" cubx-webpackage-id="text-analyzer@1.0.0">
                     <cubx-core-connections>
                         <cubx-core-connection
@@ -84,10 +85,14 @@
                             destination="wordCloud:list"
                             hook-function="connectionHook.prepareDataForWordCount"></cubx-core-connection>
                         <cubx-core-connection
-                                connection-id="con-word-count-to-pie-chart"
-                                source="wordCount"
-                                destination="pieChart:dataColumns"
-                                hook-function="connectionHook.prepareDataForWordCount"></cubx-core-connection>
+                            connection-id="con-word-count-to-pie-chart"
+                            source="wordCount"
+                            destination="pieChart:dataColumns"
+                            hook-function="connectionHook.prepareDataForWordCount"></cubx-core-connection>
+                        <cubx-core-connection
+                            connection-id="con-word-count-display"
+                            source="overallCount"
+                            destination="wordCountDisplay:value"></cubx-core-connection>
                     </cubx-core-connections>
                 </word-count>
 
@@ -103,6 +108,7 @@
             </article>
             <article class="text-center">
                 <pie-chart id="pieChart" cubx-webpackage-id="com.incowia.lib.chart-library@0.3.0"></pie-chart>
+                <p><cubx-text-output id="wordCountDisplay" cubx-webpackage-id="com.incowia.basic-html-components@1.8"></cubx-text-output>&nbsp;Wörter</p>
             </article>
         </div>
     </section>
