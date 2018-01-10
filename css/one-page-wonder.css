@@ -26,8 +26,13 @@ li {
     margin-right: 5px;
 }
 
-#sponsors img {
+.sponsorImage {
     max-height: 60px;
+    margin-bottom: 20px;
+}
+
+.sponsorInfo {
+    font-size: 100%;
 }
 
 @media (min-width: 768px) {
@@ -114,7 +119,7 @@ li {
 }
 
 .featurette-heading {
-    font-size: 50px;
+    font-size: 35px;
 }
 
 .featurette-news {
