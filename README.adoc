@@ -1,0 +1,10 @@
+= Introduction
+
+Cubbles is an open source javascript framework for building, integrating and using webcomponents in the browser (or any other browser based runtime).
+Basically the Cubbles framework is build on top of the webcomponents specification adding capabilities to
+
+. *Interact between components by defining data flows*
+. *Create new components by composition of existing components*
+. *Integrate components semaless in nearly every kind of web applications*
+
+In the following docs we will give a detailed view on how to build and use Cubbles components.  

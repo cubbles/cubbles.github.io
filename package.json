@@ -1,0 +1,12 @@
+{
+  "name": "cubx-docs",
+  "version": "1.0.0",
+  "description": "Contains the documentation for the cubbles framework",
+  "main": "index.js",
+  "repository": "https://github.com/cubbles/cubbles.github.io.git",
+  "author": "Philipp Wagner <wagner.arnstadt@googlemail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}
