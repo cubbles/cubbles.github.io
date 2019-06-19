@@ -12,8 +12,6 @@ shell.exec(command, function (code) {
 }
 
 exec('npm run docs:build', function () {
-    let sourceDirPath = path.join(__dirname, '../vuepress/.vuepress/dist'); 
-    let targetDirPath = path.join(__dirname, '../docs');
     exec('git add --all && git commit -m "Deploying documentation" && git push', function () {
         console.log('\x1b[32m%s\x1b[0m', 'Documentation was deployed successfully');
     });
