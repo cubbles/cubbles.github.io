@@ -6,7 +6,7 @@
   "scripts": {
     "docs:dev": "vuepress dev vuepress",
     "docs:build": "vuepress build vuepress",
-    "docs:deploy": "deploy.sh"
+    "docs:deploy": "node ./bin/deploy.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/cubbles/cubbles.github.io#readme",
   "devDependencies": {
+    "shelljs": "^0.8.3",
     "vuepress": "^1.0.0-rc.1"
   }
 }
