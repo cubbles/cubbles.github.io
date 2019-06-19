@@ -4,14 +4,8 @@ var fs = require('fs-extra');
 var path = require('path');
 
 function exec(command, afterCb) {
-shell.exec(command, function (code, stdout, stderr) {
+shell.exec(command, function (code) {
     console.log('Exit code:', code);
-    if (stdout) {
-        console.log('Program output:', stdout);
-    }
-    if (stderr) {
-        console.log('\x1b[31m%s\x1b[0m', 'Program stderr:', stderr);
-    }
     if (afterCb && typeof afterCb === 'function') {
         afterCb();
     }
