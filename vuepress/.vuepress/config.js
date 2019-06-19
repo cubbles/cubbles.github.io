@@ -1,6 +1,7 @@
 module.exports = {
   base: '/docs/',
   title: 'Cubbles Documentation',
+  dest: 'docs',
   themeConfig: {
     logo: '/cubblesLogo.png',
     nav: [
