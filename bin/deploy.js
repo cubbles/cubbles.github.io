@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 var shell = require('shelljs');
-var path = require('path');
 
 function exec(command, afterCb) {
 shell.exec(command, function (code) {
