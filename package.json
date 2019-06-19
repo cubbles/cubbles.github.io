@@ -1,0 +1,29 @@
+{
+  "name": "cubbles-docs",
+  "version": "1.0.0",
+  "description": "Contains the documenation generation environment for the Cubbles platform",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cubbles/cubbles.github.io.git"
+  },
+  "keywords": [
+    "Documentation",
+    "docs",
+    "cubbles"
+  ],
+  "author": "Edwin Gamboa <edwingamboa355@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cubbles/cubbles.github.io/issues"
+  },
+  "homepage": "https://github.com/cubbles/cubbles.github.io#readme",
+  "devDependencies": {
+    "vuepress": "^1.0.0-rc.1"
+  }
+}
