@@ -4,9 +4,12 @@
   "description": "Contains the documenation generation environment for the Cubbles platform",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev vuepress",
-    "docs:build": "vuepress build vuepress",
-    "docs:deploy": "node ./bin/deploy.js"
+    "docs:dev": "vuepress dev docs_dev",
+    "docs:build": "vuepress build docs_dev",
+    "docs:deploy": "node ./bin/deploy.js",
+    "docs_2x:dev": "vuepress dev docs_dev_2x",
+    "docs_2x:build": "vuepress build docs_dev_2x",
+    "docs_2x:deploy": "node ./bin/deploy_2x.js"
   },
   "repository": {
     "type": "git",
