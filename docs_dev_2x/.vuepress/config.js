@@ -6,7 +6,7 @@ module.exports = {
     logo: '/cubblesLogo.png',
     nav: [
       { text: 'About Cubbles', link: 'http://cubbles.github.io/' },
-      { text: 'Docs for RTE 3x', link: '../docs' },
+      { text: 'Docs for RTE 3x', link: 'http://cubbles.github.io/docs' },
     ],
     sidebar: [
       '/',

@@ -1,12 +1,12 @@
 module.exports = {
-  base: '/',
+  base: '/docs/',
   title: 'Cubbles Documentation',
   dest: 'docs',
   themeConfig: {
     logo: '/cubblesLogo.png',
     nav: [
       { text: 'About Cubbles', link: 'http://cubbles.github.io/' },
-      { text: 'Docs for RTE 2x', link: '../docs_2x/' },
+      { text: 'Docs for RTE 2x', link: 'http://cubbles.github.io/docs_2x/' },
     ],
     sidebar: [
       '/',
