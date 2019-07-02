@@ -3,7 +3,7 @@ home: true
 heroImage: /cubblesLogo.png
 description: Welcome to the Cubbles Documentation
 actionText: Get Started →
-actionLink: /first-steps/
+actionLink: /user-guide/
 features:
 - title: On top of webcomponents
   details: The Cubbles Platform provides a software infrastructure to support the whole lifecycle of a web component - from design to usage.
