@@ -2,7 +2,7 @@
 
 The easiest way to develop Cubbles elementaries is to modify the base sample contained in the vanilla boilerplate. In this section, we will give some recommendations to help you with that process. Below, we present an overview of the development process of a compound:
 
-![Developing a elementary with the vanilla boilerplate](../../assets/images/elementary-with-vanilla-boilerplate.png)
+![Developing a elementary with the vanilla boilerplate](../../../assets/images/elementary-with-vanilla-boilerplate.png)
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Additionally, you should edit the following files according to your needs:
 
 ### The **MANIFEST.elementary.js**
 
-It contains only the [manifest definition](../../user-guide/terms-and-concepts/artifacts.md#artifact-definition) of the elementary. As you may notice, it is a javascript script; thus, you have more freedom to play with the definition, but after building, it should be JSON and [Cubbles manifest](http://cubbles.github.io/cubx-webpackage-document-api/schema-explorer.html?schemaPath=https://raw.githubusercontent.com/cubbles/coder-toolset/develop/packages/webpackage-document-api/lib/jsonSchema/manifestWebpackage-10.1.0.schema.json) valid.
+It contains only the [manifest definition](../../../user-guide/terms-and-concepts/artifacts.md#artifact-definition) of the elementary. As you may notice, it is a javascript script; thus, you have more freedom to play with the definition, but after building, it should be JSON and [Cubbles manifest](http://cubbles.github.io/cubx-webpackage-document-api/schema-explorer.html?schemaPath=https://raw.githubusercontent.com/cubbles/coder-toolset/develop/packages/webpackage-document-api/lib/jsonSchema/manifestWebpackage-10.1.0.schema.json) valid.
 
 The following are the valid properties of an elementary manifest definition:
 

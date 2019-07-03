@@ -47,7 +47,13 @@ module.exports = {
             children: [
               '/developer-guide/vanilla-boilerplate/',
               '/developer-guide/vanilla-boilerplate/creating-project',
-              '/developer-guide/vanilla-boilerplate/developing-elementaries',
+              {
+                title: 'Developing Elementaries',
+                children: [
+                  '/developer-guide/vanilla-boilerplate/developing-elementaries/',
+                  '/developer-guide/vanilla-boilerplate/developing-elementaries/elementary-sample',                  
+                ]
+              },
               '/developer-guide/vanilla-boilerplate/developing-compounds',
               '/developer-guide/vanilla-boilerplate/available-scripts',
             ]
