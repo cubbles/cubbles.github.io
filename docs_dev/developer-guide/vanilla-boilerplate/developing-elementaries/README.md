@@ -6,7 +6,7 @@ The easiest way to develop Cubbles elementaries is to modify the base sample con
 
 ## Prerequisites
 
-To start developing Cubbles elementaries using the vanilla boilerplate, this should be cloned locally and all dependencies should be installed (See [this guide](./creating-project.md) for more information).
+To start developing Cubbles elementaries using the vanilla boilerplate, this should be cloned locally and all dependencies should be installed (See [this guide](../creating-project.md) for more information).
 
 ## Development considerations
 
