@@ -84,7 +84,7 @@ module.exports = (webpackageName) => {
 
 As you can see in the dataflow picture above, our compound has two members, the `my-currency-converter` and the `bar-chart` component. To have the resources of the members available, we need to define two dependencies to be loaded at runtime:
 
-#### currency-converter
+#### my-currency-converter
 
 1. webpackageId: it is not necessary since the `my-currency-viewer` implementation is within the same webpackage.
 2. artifactId: my-currency-converter.
