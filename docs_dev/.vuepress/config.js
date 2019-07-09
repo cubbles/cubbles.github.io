@@ -55,6 +55,7 @@ module.exports = {
                 ]
               },
               '/developer-guide/vanilla-boilerplate/developing-compounds',
+              '/developer-guide/vanilla-boilerplate/adding-docs',
               '/developer-guide/vanilla-boilerplate/available-scripts',
             ]
           },
