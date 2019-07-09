@@ -1,4 +1,4 @@
-# Create a compound component
+# A compound example
 
 ## Purpose
 
