@@ -6,7 +6,7 @@ To demonstrate how to create an elementary component using the vanilla boilerpla
 
 ## Prerequisites
 
-* A Cubbles Project was [generated](../creating-project) using the _my-currency_ as the package name.
+* A Cubbles Project was [generated](../creating-project) using _my-currency_ as the package name.
 
 > Note that we assume that you are using the [vanilla-boilerplate](https://github.com/cubblesmasters/vanilla), which uses webpack to build the artifacts. Since each type of artifact has its own webpack subconfig; in this tutorial, we assume that the root webpack configuration is the same as in the mentioned boilerplate.
 
@@ -18,7 +18,7 @@ We will create an elementary component called _my-currency-converter_. It is a c
 
 ## The required files of my-currency-converter
 
-To create an elementary component on top of the vanilla boilerplate, you can use the sample folders and edit their content according to your needs. Or, you could create it from scratch. At the end of this tutorial you will end up with the following:
+To create an elementary component on top of the vanilla boilerplate, you can use the sample  (element) and edit its content according to your needs. Or, you could create it from scratch. At the end of this tutorial you will end up with the following:
 
 * A folder called _converter_ containing the files of the elementary. The name of this folder will be used as the suffix for the artifactId of this elementary. Thus, the artifactId of this component would be _my-currency-converter_
 * A file containing the **manifest definition** of the elementary. It has to be called _MANIFEST.elementary.js_
@@ -27,13 +27,13 @@ To create an elementary component on top of the vanilla boilerplate, you can use
 * A file containing the **style** of the elementary. In this case. We will call it _element.sss_
 * A file containing a **demo** for the elementary. We will call it _SHOWROOM.html_. You don't need to edit this file for the demo to work properly
 * A file containing the **config for webpack** to build elementaries. We will call it _webpack.subconfig.js_. You don't need to edit this file for the elementary to build and work properly
-* A file containing the **docs** for the elementary. We will call it _DOCS.html_. (Not included by default in the boilerplate, check [this](../adding-docs) to know hos to generate it).
+* A file containing the **docs** for the elementary. We will call it _DOCS.html_. (Not included by default in the boilerplate, check [this](../adding-docs) to know how to generate it).
 
 The image below presents the structure of the project containing the elementary:
 
 ![my-currency-converter folder structure](../../../assets/images/elementary_folder_bp.png)
 
-## The manifest definition of my-currency-converter
+## The manifest definition of my-currency-converter (MANIFEST.elementary.js file)
 
 You can use javascript to define the manifest of your elementary, however, you must assure that at the end it should be a valid Cubbles elementary definition (See [this](../../../user-guide/terms-and-concepts/artifacts.md#artifact-definition) for more info). As mentioned above, the manifest should be defined in the _MANIFEST.elementary.js_ file, which should be located in the root folder of the elementary.
 
@@ -309,7 +309,7 @@ The `element.js` file handles the behavior of the component when a slot value is
 
 ### Change the style of elementary \(element.sss File\)
 
-> For this tutorial we won't modify the style of our component. However, you can add style definitions in the file element.sss. Using [sugarss](https://github.com/postcss/sugarss). It could also be a CSS style sheet. Then, you can import the style in the _elementary.js_ file.
+In this tutorial we won't modify the style of our component. However, you can add style definitions in the file element.sss. Using [sugarss](https://github.com/postcss/sugarss). It could also be a CSS style sheet. Then, you can import the style in the _elementary.js_ file.
 
 ## The final result
 
