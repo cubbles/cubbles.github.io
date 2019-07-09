@@ -41,7 +41,7 @@ Let's say that we want to have the following default values for our compound:
 | :--- | :--- | :--- |
 | base | currencyConverter | GBP \(Pound sterling\) |
 | foreignCurrency | currencyConverter | EUR |
-| date | currencyConverter | 2016-06-24 |
+| date | currencyConverter | 2018-06-23 |
 
 To aim that, we should extend the _inits_ property of the compound definition as follows:
 
@@ -86,4 +86,3 @@ If you run the demo page of the `currency-viewer` component, you will note that 
 ![Initialised members demo](../../../assets/images/compound_member_init.png)
 
 You can also check the results at the [online demo](https://cubbles.world/sandbox/my-first-webpackage@0.1.0-SNAPSHOT/currency-viewer-init/demo/index.html).
-
