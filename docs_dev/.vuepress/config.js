@@ -58,8 +58,8 @@ module.exports = {
                 title: 'Developing Compounds',
                 children: [
                   '/developer-guide/vanilla-boilerplate/developing-compounds/',
-                  '/developer-guide/vanilla-boilerplate/developing-compounds/compound-init',
                   '/developer-guide/vanilla-boilerplate/developing-compounds/compound-sample',                  
+                  '/developer-guide/vanilla-boilerplate/developing-compounds/compound-init',
                 ]
               },
               '/developer-guide/vanilla-boilerplate/adding-docs',
