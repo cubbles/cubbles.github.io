@@ -54,7 +54,14 @@ module.exports = {
                   '/developer-guide/vanilla-boilerplate/developing-elementaries/elementary-sample',                  
                 ]
               },
-              '/developer-guide/vanilla-boilerplate/developing-compounds',
+              {
+                title: 'Developing Compounds',
+                children: [
+                  '/developer-guide/vanilla-boilerplate/developing-compounds/',
+                  '/developer-guide/vanilla-boilerplate/developing-compounds/compound-init',
+                  '/developer-guide/vanilla-boilerplate/developing-compounds/compound-sample',                  
+                ]
+              },
               '/developer-guide/vanilla-boilerplate/adding-docs',
               '/developer-guide/vanilla-boilerplate/available-scripts',
             ]
