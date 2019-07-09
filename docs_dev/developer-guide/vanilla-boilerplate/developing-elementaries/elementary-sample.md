@@ -2,17 +2,17 @@
 
 ## Purpose
 
-To demonstrate how to create an elementary component using the vanilla boilerplate. To aim that, we will tke into account the considerations presented [here](./README).
+To demonstrate how to create an elementary component using the vanilla boilerplate. To aim that, we will take into account the considerations presented [here](./README).
 
 ## Prerequisites
 
-* A Cubbles Project was [generated](../creating-project) using the _my-currency_ as package name.
+* A Cubbles Project was [generated](../creating-project) using the _my-currency_ as the package name.
 
 > Note that we assume that you are using the [vanilla-boilerplate](https://github.com/cubblesmasters/vanilla), which uses webpack to build the artifacts. Since each type of artifact has its own webpack subconfig; in this tutorial, we assume that the root webpack configuration is the same as in the mentioned boilerplate.
 
 ## Interface of the my-currency-converter elementary
 
-We will create an elementary component called _my-currency-converter_. It is a component that uses [The Free Currency Converter API](https://free.currencyconverterapi.com) to get current and historical foreign exchange rates. This component will have the following interface \(input slots on the left and output slots on the right\):
+We will create an elementary component called _my-currency-converter_. It is a component that uses [The Foreign exchange rates API](https://exchangeratesapi.io/) to get current and historical foreign exchange rates. This component will have the following interface \(input slots on the left and output slots on the right\):
 
 ![my-currency-converter interface](../../../assets/images/elementary_interface_bp.png)
 
@@ -20,7 +20,7 @@ We will create an elementary component called _my-currency-converter_. It is a c
 
 To create an elementary component on top of the vanilla boilerplate, you can use the sample folders and edit their content according to your needs. Or, you could create it from scratch. At the end of this tutorial you will end up with the following:
 
-* A folder called _converter_ containing the files of the elementary. The name of this folder will be used as suffix for the artifactId of this elementary. Thus, the artifactId of this component would be _my-currency-converter_
+* A folder called _converter_ containing the files of the elementary. The name of this folder will be used as the suffix for the artifactId of this elementary. Thus, the artifactId of this component would be _my-currency-converter_
 * A file containing the **manifest definition** of the elementary. It has to be called _MANIFEST.elementary.js_
 * A file containing the **view** of the elementary. In this case. We will call it _element.html_
 * A file containing the **logic** of the elementary. In this case. We will call it _element.js_
@@ -35,11 +35,11 @@ The image below presents the structure of the project containing the elementary:
 
 ## The manifest definition of my-currency-converter
 
-You can use javascript to define the manifest of your elementary, however you must assure that at the end it should be a valid Cubbles elementary definition (See [this](../../../user-guide/terms-and-concepts/artifacts.md#artifact-definition) for more info). As mentioned above, the manifest should be defined in the _MANIFEST.elementary.js_ file, which should be located in the root folder of the elementary.
+You can use javascript to define the manifest of your elementary, however, you must assure that at the end it should be a valid Cubbles elementary definition (See [this](../../../user-guide/terms-and-concepts/artifacts.md#artifact-definition) for more info). As mentioned above, the manifest should be defined in the _MANIFEST.elementary.js_ file, which should be located in the root folder of the elementary.
 
-The following code defines the description, resources, runnables and dependencies of `my-currency-converter`. It is important to include the _element.html_ file as resource, otherwise the elementary would not be available. Similarly, for an elementary to work the _cubxcomponent_ dependency is a must to process it and make it work.
+The following code defines the description, resources, runnables, and dependencies of `my-currency-converter`. It is important to include the _element.html_ file as a resource, otherwise the elementary would not be available. Similarly, for an elementary to work the _cubxcomponent_ dependency is a must to process it and make it work.
 
-The runnables are files that can be "run" from a [Cubbles base](../../../user-guide/), in this case the demo and the docs files.
+The runnables are files that can be "run" from a [Cubbles base](../../../user-guide/), in this case, the demo and the docs files.
 
 ```javascript
 const assert = require("assert");
@@ -150,9 +150,9 @@ Now, we need to change the template of the component to define its view. We need
 </template>
 ```
 
-> Note that the HTML code for your component should be located inside the `<template>` tag. Also, we are using a _templateParameter_ called `elementName`. This parameter will be set a building time by webpack using the [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/). This, will assure that the artifactId is always correct, even if we change the name of the package or of the folder containing the elementary.
+> Note that the HTML code for your component should be located inside the `<template>` tag. Also, we are using a _templateParameter_ called `elementName`. This parameter will be set a building time by webpack using the [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/). This will assure that the artifactId is always correct, even if we change the name of the package or of the folder containing the elementary.
 
-To see the effects of this code, you can start the project by running the following command from project root folder:
+To see the effects of this code, you can start the project by running the following command from the project root folder:
 
 ```bash
 npm run build && npm run start:watch
@@ -231,17 +231,14 @@ The `element.js` file handles the behavior of the component when a slot value is
      * @param {string} newValue - new value of the slot
      */
     modelConversionChanged: function(newValue) {
-      // update the view
-      this.$.result.innerHTML =
-        "1 " +
-        this.getBase() +
-        " -> " +
-        "<b>" +
-        newValue +
-        "</b> " +
-        this.getForeignCurrency() +
-        " on " +
-        this.getDate();
+      let resultText;
+      if (newValue) {
+        // update the view
+        resultText = `1 ${this.getBase()} -> <b>${newValue}</b> ${this.getForeignCurrency()} on ${this.getDate()}`
+      } else {
+        resultText = 'Invalid inputs.'
+      }
+      this.$.result.innerHTML = resultText;
     },
     /**
      * Update the Component-Model and then send the request
@@ -263,21 +260,21 @@ The `element.js` file handles the behavior of the component when a slot value is
     sendQuery: function() {
       // Makes sure all slots are defined
       if (this.getBase() && this.getForeignCurrency()) {
-        var conversionKey = this.getBase() + "_" + this.getForeignCurrency();
-        var queryDate = this.getDate();
-        var baseUrl = "https://free.currconv.com/api/v7/convert";
-        var apiKey = "0e3c4468ef8daf09c2eb";
-        var queryUrl = `${baseUrl}?q=${conversionKey}&date=${queryDate}&compact=y&apiKey=${apiKey}`;
+        var baseUrl = "https://api.exchangeratesapi.io";
+        var queryUrl = `${baseUrl}/${this.getDate()}?base=${this.getBase()}&symbols=${this.getForeignCurrency()}`;
         var self = this;
 
         function processRespond(data) {
-          // Update the Cubbles component model slots using the setters
-          var converted = data[conversionKey]["val"][queryDate];
+          var converted;
+          if (data) {
+            // Update the Cubbles component model slots using the setters
+            converted = data.rates[self.getForeignCurrency()];
+          } 
           self.setConversion(converted);
-          self.setConversionArray([
-            [self.getBase(), 1],
-            [self.getForeignCurrency(), converted]
-          ]);
+            self.setConversionArray([
+              [self.getBase(), 1],
+              [self.getForeignCurrency(), converted]
+            ]);
         }
 
         this.makeRequest(queryUrl, processRespond);
@@ -293,6 +290,8 @@ The `element.js` file handles the behavior of the component when a slot value is
         if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(xhttp.responseText);
           processRespond(data);
+        } else {
+          processRespond();
         }
       };
       xhttp.open("GET", queryUrl, true);
@@ -302,24 +301,17 @@ The `element.js` file handles the behavior of the component when a slot value is
 })();
 ```
 
-> Note that the this property ise set by `/* @echo elementName */`, which would be handled by webpack using the [preprocess-loader](https://www.npmjs.com/package/preprocess-loader).
+> Note that this property is set by `/* @echo elementName */`, which would be handled by webpack using the [preprocess-loader](https://www.npmjs.com/package/preprocess-loader).
 
 ### Change the style of elementary \(element.sss File\)
 
- WIP WIP
-
-> For this tutorial we won't modify the style of our component. However, you can add CSS definitions in the file currency-converter.css.
-
-Now if you check the generated demo and click on the `Convert` button, you will see something as follows:
-
-
-You can also check the results at the [online demo](https://cubbles.world/sandbox/my-first-webpackage@0.1.0-SNAPSHOT/currency-converter/demo/index.html).
+> For this tutorial we won't modify the style of our component. However, you can add style definitions in the file element.sss. Using [sugarss](https://github.com/postcss/sugarss). It could also be a CSS style sheet. Then, you can import the style in the _elementary.js_ file.
 
 ## Adding documentation
 
-To show an example on how the webpack configuration can be modified according to your needs. We will add a documentation page to the elementary  using a component called `cubx-webpackage-viewer`. To aim that, we just need to provide the following input slots:
+To show an example of how the webpack configuration can be modified according to your needs. We will add a documentation page to the elementary using a component called `cubx-webpackage-viewer`. To aim that, we just need to provide the following input slots:
 
-* **manifestUrl**: path of the manifest containing the definition of the component. This path should be according to the final folder structure of the _dist_ folder. It our case it would be `../manifest.webpackage`.
+* **manifestUrl**: the path of the manifest containing the definition of the component. This path should be according to the final folder structure of the _dist_ folder. In our case, it would be `../manifest.webpackage`
 * **componentArtifactId**: artifactId of the elementary. Remember that it is composed by the "name" defined in the _package.json_ file and the name folder containing the elementary. In our case, it would be `my-currency-converter`
 
 We will add a _DOCS.html_ file to the root folder of the elementary. This file will contain the following code:
@@ -359,7 +351,7 @@ We will add a _DOCS.html_ file to the root folder of the elementary. This file w
 </html>
 ```
 
-Note that we are using a template parameter called `<%= elementName %>`. This would allow us to always have the correct artifactId (e.g. if we change the name of the package or o the containing folder). Fot this to work correctly, we should indicate webpack to process this file. To aim that, you should a new entry to the `plugins` property in the `config` object in the _webpack.subconfig.js_ file. You should indicate webpack to process the _DOCS.html_ file using the [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/) with a templateParameter called `elementName` as follows:
+Note that we are using a template parameter called `<%= elementName %>`. This would allow us to always have the correct artifactId (e.g. if we change the name of the package or o the containing folder). For this to work correctly, we should indicate webpack to process this file. To aim that, you should a new entry to the `plugins` property in the `config` object in the _webpack.subconfig.js_ file. You should indicate webpack to process the _DOCS.html_ file using the [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/) with a templateParameter called `elementName` as follows:
 
 ```javascript
 //...
@@ -390,7 +382,9 @@ Now, if you run your project (i.e. running the `npm run start` command) and navi
 
 ## The final result
 
-![currency-converter working demo](../../../assets/images/fixer_final.png)
+If you run the project and navigate to the _SHOWROOM.html_ file, you will see something similar to:
+
+![currency-converter working demo](../../../assets/images/elementary_final_bp.png)
 
 ### Online demo
 
