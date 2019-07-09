@@ -6,7 +6,7 @@ The easiest way to develop Cubbles compounds is to modify the base sample contai
 
 ## Prerequisites
 
-To start developing Cubbles compounds using the vanilla boilerplate, this should be cloned locally and all its dependencies should be installed (See [this guide](./creating-project.md) for more information).
+To start developing Cubbles compounds using the vanilla boilerplate, this should be cloned locally and all its dependencies should be installed (See [this guide](../creating-project) for more information).
 
 ## Development considerations
 
@@ -16,7 +16,7 @@ Additionally, you should edit the following files according to your needs:
 
 ### The **MANIFEST.compound.js**
 
-It contains only the [manifest definition](../../user-guide/terms-and-concepts/artifacts.md#artifact-definition) of the compound. As you may notice, it is a javascript script; thus, you have more freedom to play with the definition, but after building, it should be JSON and [Cubbles manifest](http://cubbles.github.io/cubx-webpackage-document-api/schema-explorer.html?schemaPath=https://raw.githubusercontent.com/cubbles/coder-toolset/develop/packages/webpackage-document-api/lib/jsonSchema/manifestWebpackage-10.1.0.schema.json) valid.
+It contains only the [manifest definition](../../../user-guide/terms-and-concepts/artifacts.md#artifact-definition) of the compound. As you may notice, it is a javascript script; thus, you have more freedom to play with the definition, but after building, it should be JSON and [Cubbles manifest](http://cubbles.github.io/cubx-webpackage-document-api/schema-explorer.html?schemaPath=https://raw.githubusercontent.com/cubbles/coder-toolset/develop/packages/webpackage-document-api/lib/jsonSchema/manifestWebpackage-10.1.0.schema.json) valid.
 
 The following are the valid properties of an elementary manifest definition:
 
@@ -73,4 +73,4 @@ After building your webpackage, the dist version of this file will have a workin
 
 While developing your compound, you can run the `npm run build` command to build a developing dist version of your webpackage. Then, you should run the `npm run start` command to start a local web server and be able to run `SHOWROOM.html` file to watch your component working.
 
-For more information about those and other commands, check [this guide](./available-scripts.md).
+For more information about those and other commands, check [this guide](../available-scripts).

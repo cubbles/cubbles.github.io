@@ -52,7 +52,7 @@ It contains the view of the elementary. You should remove the sample code except
 
 ### The **element.js** file
 
-This file contains the logic of the sample elementary. To define the behavior of an elementary you should use the [CubxComponent](../cubbles-js-api/inside-interaction.md#the-cubxcomponent-object). The most important step is to define the `is` property of this object using the `artifactId` of the elementary, which is defined automatically during the building process. Then, if you want/need, you can define the life cycle associated methods of an elementary. Also, you may want to add listeners for changes in the slot values and implement additional methods to control the behavior of your elementary.
+This file contains the logic of the sample elementary. To define the behavior of an elementary you should use the [CubxComponent](../../cubbles-js-api/inside-interaction.md#the-cubxcomponent-object). The most important step is to define the `is` property of this object using the `artifactId` of the elementary, which is defined automatically during the building process. Then, if you want/need, you can define the life cycle associated methods of an elementary. Also, you may want to add listeners for changes in the slot values and implement additional methods to control the behavior of your elementary.
 
 ```javascript
 // imports
@@ -97,4 +97,4 @@ After building your webpackage, the dist version of this file will have a workin
 
 While developing your compound, you can run the `npm run build` command to build a developing dist version of your webpackage. Then, you should run the `npm run start` command to start a local web server and be able to run `SHOWROOM.html` file to watch your component working.
 
-For more information about those and other commands, check [this guide](./available-scripts.md).
+For more information about those and other commands, check [this guide](../available-scripts.md).

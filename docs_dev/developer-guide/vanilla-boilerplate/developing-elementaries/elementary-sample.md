@@ -2,11 +2,11 @@
 
 ## Purpose
 
-To demonstrate how to create an elementary component using the vanilla boilerplate. To aim that, we will take into account the considerations presented [here](./README).
+To demonstrate how to create an elementary component using the vanilla boilerplate. To aim that, we will take into account the considerations presented [here](./).
 
 ## Prerequisites
 
-* A Cubbles Project was [generated](../creating-project) using _my-currency_ as the package name.
+A Cubbles Project was [generated](../creating-project) using _my-currency_ as the package name.
 
 > Note that we assume that you are using the [vanilla-boilerplate](https://github.com/cubblesmasters/vanilla), which uses webpack to build the artifacts. Since each type of artifact has its own webpack subconfig; in this tutorial, we assume that the root webpack configuration is the same as in the mentioned boilerplate.
 
@@ -39,7 +39,7 @@ You can use javascript to define the manifest of your elementary, however, you m
 
 The following code defines the description, resources, runnables, and dependencies of `my-currency-converter`. It is important to include the _element.html_ file as a resource, otherwise the elementary would not be available. Similarly, for an elementary to work the _cubxcomponent_ dependency is a must to process it and make it work.
 
-The runnables are files that can be "run" from a [Cubbles base](../../../user-guide/), in this case, the demo and the docs files.
+The runnables are files that can be "run" from a [Cubbles base](../../../user-guide/terms-and-concepts/base), in this case, the demo and the docs files.
 
 ```javascript
 const assert = require("assert");

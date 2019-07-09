@@ -2,7 +2,7 @@
 
 ## Purpose
 
-To demonstrate how to create a compound component using the vanilla boilerplate. To aim that, we will take into account the considerations presented [here](./README).
+To demonstrate how to create a compound component using the vanilla boilerplate. To aim that, we will take into account the considerations presented [here](./).
 
 ## Prerequisites
 
