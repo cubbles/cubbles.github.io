@@ -27,7 +27,7 @@ To create an elementary component on top of the vanilla boilerplate, you can use
 * A file containing the **style** of the elementary. In this case. We will call it _element.sss_
 * A file containing a **demo** for the elementary. We will call it _SHOWROOM.html_. You don't need to edit this file for the demo to work properly
 * A file containing the **config for webpack** to build elementaries. We will call it _webpack.subconfig.js_. You don't need to edit this file for the elementary to build and work properly
-* A file containing the **docs** for the elementary. We will call it _DOCS.html_. (Not included by default in the boilerplate)
+* A file containing the **docs** for the elementary. We will call it _DOCS.html_. (Not included by default in the boilerplate, check [this](../adding-docs) to know hos to generate it).
 
 The image below presents the structure of the project containing the elementary:
 
@@ -269,12 +269,16 @@ The `element.js` file handles the behavior of the component when a slot value is
           if (data) {
             // Update the Cubbles component model slots using the setters
             converted = data.rates[self.getForeignCurrency()];
-          } 
+          }
           self.setConversion(converted);
+          if (converted) {
             self.setConversionArray([
               [self.getBase(), 1],
               [self.getForeignCurrency(), converted]
             ]);
+          } else {
+            self.setConversionArray([]);
+            }
         }
 
         this.makeRequest(queryUrl, processRespond);
