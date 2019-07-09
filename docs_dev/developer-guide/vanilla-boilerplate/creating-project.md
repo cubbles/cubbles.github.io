@@ -16,6 +16,27 @@ After that, you should have a folder structure like the one below:
 
 ![vanilla boilerplate folder structure](../../assets/images/vanilla-boilerplate-folder-structure.png)
 
+### Change the origin
+
+Run the following commands to change the origin of the package to your own package:
+
+```bash
+$ git remote rm origin
+$ git remote add origin git@github.com:<your-git>/<your-package-name>.git
+$ git config master.remote origin
+$ git config master.merge refs/heads/master
+```
+
+## Initializing your package
+
+Now, you need to initialize your package using the `npm init` command.
+
+> Remember that the name of the package will be used to generate the `webpackageId` of your webpackage. Which in the sample case would be `my-first-ct-project`.
+
+## Running 'npm install'
+
+As usual, you should run the `npm install` command to install all the required dependencies of your package. If everything goes well, you will be able to use the [available scripts](./available-scripts.md) to develop, build, validate and upload your webpackage.
+
 ### Boilerplate content
 
 #### The 'src' folder
@@ -64,13 +85,3 @@ The configuration object has the following properties:
 #### Other config files
 
 Also, the root folder contains common config files such as *.gitignore* and *.eslintrc*.
-
-## Initializing your package
-
-Now, you need to initialize your package using the `npm init` command.
-
-> Remember that the name of the package will be used to generate the `webpackageId` of your webpackage. Which in the sample case would be `my-first-ct-project`.
-
-## Running 'npm install'
-
-As usual, you should run the `npm install` command to install all the required dependencies of your package. If everything goes well, you will be able to use the [available scripts](./available-scripts.md) to develop, build, validate and upload your webpackage.
