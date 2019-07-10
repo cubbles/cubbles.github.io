@@ -14,7 +14,7 @@ The Cubbles Javascript API offers a method called `addDynamicConnection`, which 
 
 ## Public methods
 
-To set and validate the properties of a `DynamicConnection` you can use the following methods:
+To set and validate the properties of a `DynamicConnection`, you can use the following methods:
 
 | Method name | Description |
 |--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,7 +47,6 @@ Then, you should instantiate and set the properties of a _DynamicConnection_ obj
 ```javascript
 ...
 var dynCon = new window.cubx.cif.DynamicConnection();
-
 
 dynCon.setSourceRuntimeId(sourceTextArea.getAttribute('runtime-id'));
 dynCon.setSourceSlot('value');
@@ -116,37 +115,37 @@ In this demo, we have two instances of our `cubx-textarea` component and will co
     </cubx-core-init>
   </cubx-textarea>
   <script>
-(function(){
-      'use strict';
+  (function(){
+    'use strict';
 
-      var button = document.querySelector('#button');
+    var button = document.querySelector('#button');
 
-      // 1. Get the source and destination components from DOM
-      var sourceTextArea = document.querySelector('#sourceTA');
-      var destinationTextArea = document.querySelector('#destinationTA');
+    // 1. Get the source and destination components from DOM
+    var sourceTextArea = document.querySelector('#sourceTA');
+    var destinationTextArea = document.querySelector('#destinationTA');
 
-      // 2. Listen to the 'cifReady' event to enable the 'Add dynamic connection' button
-      document.addEventListener('cifReady', function(event) {
-        button.removeAttribute('disabled');
-});
+    // 2. Listen to the 'cifReady' event to enable the 'Add dynamic connection' button
+    document.addEventListener('cifReady', function(event) {
+      button.removeAttribute('disabled');
+    });
 
-      // 3. Listen to the 'click' event
-      button.addEventListener('click', function () {
-        // 4. Instantiate and set the properties of the DynamicConnection object
-        var dynCon = new window.cubx.cif.DynamicConnection();
-        dynCon.setSourceRuntimeId(sourceTextArea.getAttribute('runtime-id'));
-        dynCon.setSourceSlot('value');
-        dynCon.setDestinationRuntimeId(destinationTextArea.getAttribute('runtime-id'));
-        dynCon.setDestinationSlot('value');
-        dynCon.setDirectExecution(true);
+    // 3. Listen to the 'click' event
+    button.addEventListener('click', function () {
+      // 4. Instantiate and set the properties of the DynamicConnection object
+      var dynCon = new window.cubx.cif.DynamicConnection();
+      dynCon.setSourceRuntimeId(sourceTextArea.getAttribute('runtime-id'));
+      dynCon.setSourceSlot('value');
+      dynCon.setDestinationRuntimeId(destinationTextArea.getAttribute('runtime-id'));
+      dynCon.setDestinationSlot('value');
+      dynCon.setDirectExecution(true);
 
-        // 5. Add the DynamicConnection to the source component
-        sourceTextArea.addDynamicConnection(dynCon);
+      // 5. Add the DynamicConnection to the source component
+      sourceTextArea.addDynamicConnection(dynCon);
 
-        // 6. Disable the 'Add dynamic connection' button
-        button.setAttribute('disabled', 'disabled');
-});
-})()
+      // 6. Disable the 'Add dynamic connection' button
+      button.setAttribute('disabled', 'disabled');
+    });
+  })()
   </script>
 </body>
 </html>
