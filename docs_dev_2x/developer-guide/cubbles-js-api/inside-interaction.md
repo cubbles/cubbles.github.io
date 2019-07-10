@@ -39,10 +39,16 @@ When programming the logic of an elementary component you will need to access an
 
 ### Accessing the local DOM of an elementary
 
-You can access the local DOM of an elementary using the standard Javascript selection methods (_this.querySelector(selectors)_ and _this.querySelectorAll(selectors)_). Additionally, you can use the _this.\$\$(selectors)_ shortcut for _this.querySelector(selectors)_. For instance, the code below will return the textarea element contained in our 'cubx-textarea' elementary:
+You can access the local DOM of an elementary using the standard Javascript selection methods (_this.querySelector(selectors)_ and _this.querySelectorAll(selectors)_). Additionally, you can use the `this.\$\$(selectors)` shortcut for _this.querySelector(selectors)_. For instance, the code below will assign the textarea element contained in our `cubx-textarea` elementary to the variable:
 
 ```javascript
 var textarea = this.$$('textarea');
+```
+
+Moreover, you can use the `this.\$.elementId` shortcut for _this.getElementById(elementId)_ method. For instance, the code below will assign the HTML element with _id="myTextarea"_ to the variable:
+
+```javascript
+var textarea = this.$.myTextarea;
 ```
 
 ## Adding logic to the cubx-textarea component
