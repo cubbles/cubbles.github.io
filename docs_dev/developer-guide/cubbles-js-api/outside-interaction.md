@@ -6,7 +6,7 @@ In the following sections, those methods are presented and explained using the  
 
 ## Prerequisites
 
-The prerequisites and sample component presented the [Cubbles Javascript API intro section](./README.md) apply to this tutorial.
+The prerequisites and sample component presented the [Cubbles Javascript API intro section](./) apply to this tutorial.
 
 ## Methods for outside interaction
 
@@ -30,8 +30,8 @@ Now to use these methods you should have our component already working; to aim t
 <head>
     <meta charset="UTF-8">
     <title>Interacting with &lt;cubx-textarea&gt;</title>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/custom-elements-es5-adapter.js"></script>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/webcomponents-lite.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/custom-elements-es5-adapter.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/webcomponents-lite.js"></script>
     <script>
       window.cubx = {
           CRCInit: {
@@ -44,7 +44,7 @@ Now to use these methods you should have our component already working; to aim t
           }
       };
     </script>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
 </head>
 <body>
     <cubx-textarea cubx-webpackage-id="com.incowia.basic-html-components@2.0.0-SNAPSHOT"></cubx-textarea>
@@ -108,8 +108,8 @@ The code below follow the indications presented above using our `cubx-textarea` 
   <meta charset="UTF-8">
   <title>Interacting with &lt;cubx-textarea&gt;</title>
 
-  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/custom-elements-es5-adapter.js"></script>
-  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/webcomponents-lite.js"></script>
+  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/custom-elements-es5-adapter.js"></script>
+  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/webcomponents-lite.js"></script>
   <script>
       window.cubx = {
           CRCInit: {
@@ -122,7 +122,7 @@ The code below follow the indications presented above using our `cubx-textarea` 
           }
       };
     </script>
-  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
+  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
 </head>
 
 <body>
@@ -189,8 +189,8 @@ The only output slot of our  `cubx-textarea`  component is  _value_. The followi
 <head>
   <meta charset="UTF-8">
   <title>Interacting with &lt;cubx-textarea&gt;</title>
-  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/custom-elements-es5-adapter.js"></script>
-  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/webcomponents-lite.js"></script>
+  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/custom-elements-es5-adapter.js"></script>
+  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/webcomponents-lite.js"></script>
   <script>
       window.cubx = {
           CRCInit: {
@@ -203,7 +203,7 @@ The only output slot of our  `cubx-textarea`  component is  _value_. The followi
           }
       };
     </script>
-  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
+  <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
 </head>
 <body>
   <cubx-textarea cubx-webpackage-id="com.incowia.basic-html-components@2.0.0-SNAPSHOT"></cubx-textarea>
