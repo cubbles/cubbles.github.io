@@ -13,11 +13,9 @@ For this tutorial, we will assume that we are developing our `cubx-textarea` com
 Our simplified `cubx-textarea` will contain a normal textarea HTML element, which will be manipulated from the logic layer. The view of our elementary looks as follows:
 
 ```html
-<template id="cubx-textarea">
+<template id="<%= elementName %>"> <!-- elementName = cubx-textarea, set in build time by webpack -->
     <textarea></textarea>
 </template>
-// Include the logic of our elementary
-<script src="cubx-textarea.js"></script>
 ```
 
 ## The logic of an elementary
@@ -26,7 +24,7 @@ Our simplified `cubx-textarea` will contain a normal textarea HTML element, whic
 
 The CubxComponent object provides the global `CubxComponent()` function to register a new Cubble component. It provides the _model_ property to control the state of an elementary component. You should extend this object to code the logic of an elementary.
 
-When programming the logic of an elementary component you will need to access and edit slots' values. You can also use the [public methods](./outside-interaction.md#methods-for-outside-interaction) used to interact from the outside, i.e., _get\[SlotId\]()_, _set\[SlotId\](value)_, _slots ()_ and _repropagate\[SlotId\] ()_. In that case, the component is referenced using _this_ since you are inside the component, e.g. use `this.getValue()` in our `cubx-textarea` elementary to access the value of the _value_ slot. Besides those methods, you can implement the ones described below:
+When programming the logic of an elementary component, you will need to access and edit slots' values. You can also use the [public methods](./outside-interaction.md#methods-for-outside-interaction) to interact from the inside, i.e., _get\[SlotId\]()_, _set\[SlotId\](value)_, _slots ()_ and _repropagate\[SlotId\] ()_. In that case, the component is referenced using _this_ since you are inside the component, e.g. use `this.getValue()` in our `cubx-textarea` elementary to access the value of the _value_ slot. Besides those methods, you can implement the ones described below:
 
 | Method name convention | Description |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +37,7 @@ When programming the logic of an elementary component you will need to access an
 
 ### Accessing the local DOM of an elementary
 
-You can access the local DOM of an elementary using the standard Javascript selection methods (_this.querySelector(selectors)_ and _this.querySelectorAll(selectors)_). Additionally, you can use the _this.\$\$(selectors)_ shortcut for _this.querySelector(selectors)_. For instance, the code below will return the textarea element contained in our 'cubx-textarea' elementary:
+You can access the local DOM of an elementary using the standard Javascript selection methods (_this.querySelector(selectors)_ and _this.querySelectorAll(selectors)_). Additionally, you can use the _this.\$\$(selectors)_ shortcut for _this.querySelector(selectors)_. For instance, the code below will return the textarea element contained in our `cubx-textarea` elementary:
 
 ```javascript
 var textarea = this.$$('textarea');
@@ -59,7 +57,7 @@ That extension can be done extending the *CubxComponent* object. In our case, we
   'use strict';
 
   CubxComponent({
-    is: 'cubx-textarea',
+    is: "/* @echo elementName */", // elementName = 'cubx-textarea', set in build time by webpack
 
     // 1. 'change' event listener
     contextReady: function() {
@@ -90,8 +88,8 @@ We will use two instances of the `cubx-textarea` elementary. In this example, we
 <head>
     <meta charset="UTF-8">
     <title>&lt;cubx-textarea&gt;</title>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/custom-elements-es5-adapter.js"></script>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/webcomponents-lite.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/custom-elements-es5-adapter.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/webcomponents-lite.js"></script>
     <script>
       window.cubx = {
         CRCInit: {
@@ -104,7 +102,7 @@ We will use two instances of the `cubx-textarea` elementary. In this example, we
         }
       };
     </script>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
 </head>
 <body>
   <cubx-textarea cubx-webpackage-id="com.incowia.basic-html-components@2.0.0-SNAPSHOT" id="textarea1">
@@ -129,33 +127,40 @@ Check [this demo](https://cubbles.world/sandbox/my-first-webpackage@0.1.0-SNAPSH
 
 ## Interaction via initialization
 
-Input slots can be initialized in manifest, so you can pre-defined an initial interaction by default. For elementary components, the slot definition object has a property called _value_. This value will be set to the slot during component initialization; thus, when _cubxReady()_ is called, the slot will have that value.
+Input slots can be initialized in manifest (_MANIFEST.elementary.js_ file), so you can pre-defined an initial interaction by default. For elementary components, the slot definition object has a property called _value_. This value will be set to the slot during component initialization; thus, when _cubxReady()_ is called, the slot will have that value.
 
-### A working example
+### A working example for initialization
 
 We will initialize the value of the slots of our `cubx-textarea` component. The slots definition should look similar to the one below, note that the initialization occurs due to the _value_ property:
 
-```JSON
-...
-"slots": [
-  {
-    "slotId": "value",
-    "type": "string",
-    "direction": [
-      "input",
-      "output"
-    ],
-    "value": "The value of my textarea",
-  }
-]
-...
+```javascript
+const assert = require("assert");
+
+module.exports = webpackageName => {
+  assert.ok(webpackageName, 'Expected "webpackageName" to be defined.');
+  return {
+    //...
+    slots: [
+      {
+        slotId: "value",
+        type: "string",
+        direction: [
+          "input",
+          "output"
+        ],
+        value: "The value of my textarea",
+      }
+    ]
+    //...
+  };
+};
 ```
 
 > Note that these initial values will not be propagated since this initialization is only valid for input slots.
 
 This time, we should just use the component to see the result of defining init values for the slots:
 
-#### Code
+#### Code for initialization
 
 ```html
 <!DOCTYPE html>
@@ -163,8 +168,8 @@ This time, we should just use the component to see the result of defining init v
 <head>
     <meta charset="UTF-8">
     <title>&lt;cubx-textarea&gt;</title>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/custom-elements-es5-adapter.js"></script>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/webcomponents/webcomponents-lite.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/custom-elements-es5-adapter.js"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/webcomponents/webcomponents-lite.js"></script>
     <script>
       window.cubx = {
         CRCInit: {
@@ -177,7 +182,7 @@ This time, we should just use the component to see the result of defining init v
         }
       };
     </script>
-    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0-SNAPSHOT/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
+    <script src="https://cubbles.world/sandbox/cubx.core.rte@3.0.0/crc-loader/js/main.js" data-crcinit-loadcif="true"></script>
 </head>
 <body>
   <cubx-textarea cubx-webpackage-id="com.incowia.basic-html-components@2.0.0-SNAPSHOT"></cubx-textarea>
@@ -186,6 +191,6 @@ This time, we should just use the component to see the result of defining init v
 </html>
 ```
 
-#### Result
+#### Result for initialization
 
 ![cubx-textarea that was initialized from the manifest](../../assets/images/init-elementary-manifest.png)
