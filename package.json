@@ -7,9 +7,9 @@
     "docs:dev": "vuepress dev docs_dev",
     "docs:build": "vuepress build docs_dev",
     "docs:deploy": "node ./bin/deploy.js",
-    "docs_2x:dev": "vuepress dev docs_dev_2x",
-    "docs_2x:build": "vuepress build docs_dev_2x",
-    "docs_2x:deploy": "node ./bin/deploy_2x.js"
+    "docs_10:dev": "vuepress dev docs_dev_10",
+    "docs_10:build": "vuepress build docs_dev_10",
+    "docs_10:deploy": "node ./bin/deploy_10.js"
   },
   "repository": {
     "type": "git",

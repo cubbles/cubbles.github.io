@@ -1,12 +1,12 @@
 module.exports = {
-  base: '/docs_2x/',
+  base: '/docs_10/',
   title: 'Cubbles Documentation',
-  dest: 'docs_2x',
+  dest: 'docs_10',
   themeConfig: {
     logo: '/cubblesLogo.png',
     nav: [
       { text: 'About Cubbles', link: 'http://cubbles.github.io/' },
-      { text: 'Docs for RTE 3x', link: 'http://cubbles.github.io/docs' },
+      { text: 'Docs for Model Version >= 10.1.0', link: 'http://cubbles.github.io/docs' },
     ],
     sidebar: [
       '/',

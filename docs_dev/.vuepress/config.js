@@ -6,7 +6,7 @@ module.exports = {
     logo: '/cubblesLogo.png',
     nav: [
       { text: 'About Cubbles', link: 'http://cubbles.github.io/' },
-      { text: 'Docs for Model Version <= 10.0.0', link: 'http://cubbles.github.io/docs_2x/' },
+      { text: 'Docs for Model Version <= 10.0.0', link: 'http://cubbles.github.io/docs_10/' },
     ],
     sidebar: [
       '/',
