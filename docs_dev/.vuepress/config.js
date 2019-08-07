@@ -36,6 +36,12 @@ module.exports = {
               '/user-guide/cubbles-tag-api/',
               '/user-guide/cubbles-tag-api/dependency-api',                    
             ]
+          },
+          {
+            title: 'Known Issues',
+            children: [
+              '/user-guide/known-issues/lodash-3-conflict',                    
+            ]
           }
         ]
       },
